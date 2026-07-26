@@ -9,32 +9,8 @@
     <atom:link href="https://baiyb.top/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Fri, 24 Jul 2026 15:28:51 GMT</pubDate>
+    <pubDate>Sun, 28 Jun 2026 07:59:19 GMT</pubDate>
     <generator>http://hexo.io/</generator>
-    
-    <item>
-      <title>测试hexo编辑器</title>
-      <link>https://baiyb.top/2026/06/27/hexo/</link>
-      <guid>https://baiyb.top/2026/06/27/hexo/</guid>
-      <pubDate>Sat, 27 Jun 2026 14:10:27 GMT</pubDate>
-      
-        
-        
-      <description>&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="这是一个测试"><a href="#这是一个测试" class="headerlink" title="这是一个测试"></a>这是一个测试</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这个能不能测试出一些bug</span><br></pre></td></tr></table></figure><p>我来插入一个图片<br><img src="https://img.baiyb.top/file/a8b737a61c802c23c01073c358eccd93.jpg" alt="image"></p><p>测试测试测试</p><h1 id="文字颜色有问题"><a href="#文字颜色有问题" class="headerlink" title="文字颜色有问题"></a>文字颜色有问题</h1><blockquote><p>如果用户需要添加颜色的话，可以在右边的渲染页面选中要改色的文字，右键打开改色页面，选择对应的颜色，可以给几个默认的然后用户也可以自己选，就像word一样，包括高亮、加黑、斜体、下划线等等</p></blockquote>]]></content:encoded>
-      
-      
-      
-      <category domain="https://baiyb.top/tags/%E5%8E%95%E6%89%80/">厕所</category>
-      
-      
-      <comments>https://baiyb.top/2026/06/27/hexo/#disqus_thread</comments>
-      
-    </item>
     
     <item>
       <title>一键获取可以导入WakeUP的bxk课程表</title>
