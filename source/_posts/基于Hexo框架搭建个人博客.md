@@ -49,29 +49,29 @@ thumbnail: https://i1.mcobj.com/uploads/20220112_71ce4921653f8.jpg # 备用封�
 </style>
 <div class="hexo-blog-list">
 <div class="hexo-blog-card" style="--card-color-1:#667eea;--card-color-2:#8058b5;">
-<a class="hexo-blog-card-link" href="https://你的博客地址.com" target="_blank" rel="noopener noreferrer" aria-label="访问博客"></a>
+<a class="hexo-blog-card-link" href="https://blog.zhheo.com/" target="_blank" rel="noopener noreferrer" aria-label="访问张洪Heo博客"></a>
 <div class="hexo-blog-card-content">
-<div class="hexo-blog-card-title"><span class="hexo-blog-card-icon">☀️</span><span>你的名字</span><span class="hexo-blog-card-domain">· blog.example.com</span></div>
-<p class="hexo-blog-card-desc">分享 AI、产品设计与技术实践，记录有意思的项目、工具探索，以及关于科技与数字生活的一些思考。</p>
-<div class="hexo-blog-card-tags"><span class="hexo-blog-card-tag">AI 探索</span><span class="hexo-blog-card-tag">产品设计</span><span class="hexo-blog-card-tag">技术分享</span></div>
+<div class="hexo-blog-card-title"><span class="hexo-blog-card-icon">🌟</span><span>张洪Heo</span><span class="hexo-blog-card-domain">- blog.zhheo.com</span></div>
+<p class="hexo-blog-card-desc">专注设计与科技生活分享，涵盖产品设计、UI/UX、软件开发等领域，拥有自研AI搜索和丰富交互功能的现代化博客。</p>
+<div class="hexo-blog-card-tags"><span class="hexo-blog-card-tag">设计分享</span><span class="hexo-blog-card-tag">UI/UX</span><span class="hexo-blog-card-tag">AI搜索</span></div>
 <span class="hexo-blog-card-button">🔗 访问博客</span>
 </div>
 </div>
-<div class="hexo-blog-card" style="--card-color-1:#379e98;--card-color-2:#5ec9a7;">
-<a class="hexo-blog-card-link" href="https://你的博客地址.com" target="_blank" rel="noopener noreferrer" aria-label="访问博客"></a>
+<div class="hexo-blog-card" style="--card-color-1:#43a59b;--card-color-2:#59cfaa;">
+<a class="hexo-blog-card-link" href="https://www.liushen.fun/" target="_blank" rel="noopener noreferrer" aria-label="访问清羽飞扬博客"></a>
 <div class="hexo-blog-card-content">
-<div class="hexo-blog-card-title"><span class="hexo-blog-card-icon">🚀</span><span>开发随笔</span><span class="hexo-blog-card-domain">· dev.example.com</span></div>
-<p class="hexo-blog-card-desc">记录开发学习过程中的实践与思考，分享开源项目、Web 开发、服务器折腾以及各种实用工具。</p>
-<div class="hexo-blog-card-tags"><span class="hexo-blog-card-tag">开源项目</span><span class="hexo-blog-card-tag">Web 开发</span><span class="hexo-blog-card-tag">实用工具</span></div>
+<div class="hexo-blog-card-title"><span class="hexo-blog-card-icon">🚀</span><span>清羽飞扬</span><span class="hexo-blog-card-domain">- www.liushen.fun</span></div>
+<p class="hexo-blog-card-desc">前端开发学生的技术成长记录，分享开源项目、深度学习经验，以及自建的多个实用工具，技术驱动的开放博客。</p>
+<div class="hexo-blog-card-tags"><span class="hexo-blog-card-tag">前端开发</span><span class="hexo-blog-card-tag">开源项目</span><span class="hexo-blog-card-tag">实用工具</span></div>
 <span class="hexo-blog-card-button">🔗 访问博客</span>
 </div>
 </div>
-<div class="hexo-blog-card" style="--card-color-1:#171329;--card-color-2:#2b268d;">
-<a class="hexo-blog-card-link" href="https://你的博客地址.com" target="_blank" rel="noopener noreferrer" aria-label="访问博客"></a>
+<div class="hexo-blog-card" style="--card-color-1:#17162f;--card-color-2:#274b92;">
+<a class="hexo-blog-card-link" href="https://xbxyftx.top/" target="_blank" rel="noopener noreferrer" aria-label="访问XBXyftx博客"></a>
 <div class="hexo-blog-card-content">
-<div class="hexo-blog-card-title"><span class="hexo-blog-card-icon">💻</span><span>技术博客</span><span class="hexo-blog-card-domain">· tech.example.com</span></div>
-<p class="hexo-blog-card-desc">关于 AI、大模型、系统部署和软件开发的技术记录，偶尔也会分享一些折腾硬件与开源生态的经验。</p>
-<div class="hexo-blog-card-tags"><span class="hexo-blog-card-tag">AI</span><span class="hexo-blog-card-tag">Linux</span><span class="hexo-blog-card-tag">开源技术</span></div>
+<div class="hexo-blog-card-title"><span class="hexo-blog-card-icon">🌌</span><span>XBXyftx</span><span class="hexo-blog-card-domain">- xbxyftx.top</span></div>
+<p class="hexo-blog-card-desc">记录AI编程、Agent工作流、鸿蒙与开源项目实践，同时分享Hexo优化、算法学习和各类技术探索的个人博客。</p>
+<div class="hexo-blog-card-tags"><span class="hexo-blog-card-tag">AI编程</span><span class="hexo-blog-card-tag">Agent</span><span class="hexo-blog-card-tag">鸿蒙开源</span></div>
 <span class="hexo-blog-card-button">🔗 访问博客</span>
 </div>
 </div>
