@@ -31,6 +31,51 @@ thumbnail: https://i1.mcobj.com/uploads/20220112_71ce4921653f8.jpg # 备用封�
 
 # 什么是博客
 博客是一个展示你自己的平台，是一个记录你生活的地方，是组建独属于你的小天地的港湾。与此同时，博客也是一个展示捏技术力的地方，是一个让陌生人对你刮目相看的展示平台。像是下面这种博客就是经过了深度魔改，集成了独属于自己的喜好与巧思的博客。
+<style>
+.hexo-blog-list{display:flex;flex-direction:column;gap:24px;margin:28px 0;}
+.hexo-blog-card{position:relative;overflow:hidden;padding:28px 30px;min-height:180px;border-radius:18px;color:#fff;background:radial-gradient(circle at 90% 10%,rgba(255,255,255,.18),transparent 35%),linear-gradient(135deg,var(--card-color-1),var(--card-color-2));box-shadow:0 10px 30px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.12);transition:transform .28s ease,box-shadow .28s ease,filter .28s ease;}
+.hexo-blog-card:hover{transform:translateY(-6px) scale(1.008);box-shadow:0 18px 45px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.18);filter:brightness(1.05);}
+.hexo-blog-card::before{content:"";position:absolute;width:280px;height:280px;right:-100px;top:-140px;border-radius:50%;background:rgba(255,255,255,.12);filter:blur(50px);pointer-events:none;}
+.hexo-blog-card-link{position:absolute;inset:0;z-index:10;border-radius:inherit;}
+.hexo-blog-card-content{position:relative;z-index:2;pointer-events:none;}
+.hexo-blog-card-title{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:18px;font-size:22px;font-weight:700;line-height:1.4;}
+.hexo-blog-card-icon{font-size:26px;}
+.hexo-blog-card-domain{font-size:18px;font-weight:500;color:rgba(255,255,255,.72);}
+.hexo-blog-card-desc{margin:0 0 20px;max-width:900px;color:rgba(255,255,255,.82);font-size:15px;line-height:1.8;}
+.hexo-blog-card-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px;}
+.hexo-blog-card-tag{padding:6px 12px;border-radius:10px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.92);font-size:13px;font-weight:500;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+.hexo-blog-card-button{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:15px;font-weight:600;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+@media (max-width:640px){.hexo-blog-list{gap:18px;}.hexo-blog-card{padding:22px 20px;min-height:auto;border-radius:16px;}.hexo-blog-card-title{font-size:19px;margin-bottom:14px;}.hexo-blog-card-domain{width:100%;font-size:14px;margin-left:36px;margin-top:-6px;}.hexo-blog-card-desc{font-size:14px;}}
+</style>
+<div class="hexo-blog-list">
+<div class="hexo-blog-card" style="--card-color-1:#667eea;--card-color-2:#8058b5;">
+<a class="hexo-blog-card-link" href="https://你的博客地址.com" target="_blank" rel="noopener noreferrer" aria-label="访问博客"></a>
+<div class="hexo-blog-card-content">
+<div class="hexo-blog-card-title"><span class="hexo-blog-card-icon">☀️</span><span>你的名字</span><span class="hexo-blog-card-domain">· blog.example.com</span></div>
+<p class="hexo-blog-card-desc">分享 AI、产品设计与技术实践，记录有意思的项目、工具探索，以及关于科技与数字生活的一些思考。</p>
+<div class="hexo-blog-card-tags"><span class="hexo-blog-card-tag">AI 探索</span><span class="hexo-blog-card-tag">产品设计</span><span class="hexo-blog-card-tag">技术分享</span></div>
+<span class="hexo-blog-card-button">🔗 访问博客</span>
+</div>
+</div>
+<div class="hexo-blog-card" style="--card-color-1:#379e98;--card-color-2:#5ec9a7;">
+<a class="hexo-blog-card-link" href="https://你的博客地址.com" target="_blank" rel="noopener noreferrer" aria-label="访问博客"></a>
+<div class="hexo-blog-card-content">
+<div class="hexo-blog-card-title"><span class="hexo-blog-card-icon">🚀</span><span>开发随笔</span><span class="hexo-blog-card-domain">· dev.example.com</span></div>
+<p class="hexo-blog-card-desc">记录开发学习过程中的实践与思考，分享开源项目、Web 开发、服务器折腾以及各种实用工具。</p>
+<div class="hexo-blog-card-tags"><span class="hexo-blog-card-tag">开源项目</span><span class="hexo-blog-card-tag">Web 开发</span><span class="hexo-blog-card-tag">实用工具</span></div>
+<span class="hexo-blog-card-button">🔗 访问博客</span>
+</div>
+</div>
+<div class="hexo-blog-card" style="--card-color-1:#171329;--card-color-2:#2b268d;">
+<a class="hexo-blog-card-link" href="https://你的博客地址.com" target="_blank" rel="noopener noreferrer" aria-label="访问博客"></a>
+<div class="hexo-blog-card-content">
+<div class="hexo-blog-card-title"><span class="hexo-blog-card-icon">💻</span><span>技术博客</span><span class="hexo-blog-card-domain">· tech.example.com</span></div>
+<p class="hexo-blog-card-desc">关于 AI、大模型、系统部署和软件开发的技术记录，偶尔也会分享一些折腾硬件与开源生态的经验。</p>
+<div class="hexo-blog-card-tags"><span class="hexo-blog-card-tag">AI</span><span class="hexo-blog-card-tag">Linux</span><span class="hexo-blog-card-tag">开源技术</span></div>
+<span class="hexo-blog-card-button">🔗 访问博客</span>
+</div>
+</div>
+</div>
 
 # 工具安装与准备工作
 魔法上网、nodejs、git、注册github账号
