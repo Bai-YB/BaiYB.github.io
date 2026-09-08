@@ -277,3 +277,6 @@ hexo cl && hexo g && hexo s
 ![](https://free.picui.cn/free/2025/06/28/685ed48168388.png)<br>
 显示`INFO Deploy done：git`，说明博客重新上传至`GitHub`成功<br>
 ![](https://free.picui.cn/free/2025/06/28/685edc34911dd.png)
+
+# 结语
+实践虽小，内涵极大，通过本次活动
