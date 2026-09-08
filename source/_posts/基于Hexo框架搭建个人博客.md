@@ -32,7 +32,9 @@ thumbnail: https://i1.mcobj.com/uploads/20220112_71ce4921653f8.jpg # 备用封�
 
 
 # 工具安装与准备工作
-nodejs、git、注册github账号
+魔法上网、nodejs、git、注册github账号
+## 魔法上网
+
 ## nodejs安装
 官方下载链接：[https://nodejs.org/en](https://nodejs.org/en)<br>
 压缩包（可能不是官网最新版）：【[点击下载](/download/node-v22.16.0-win-x64.zip)】<br>
