@@ -34,6 +34,9 @@ thumbnail: https://i1.mcobj.com/uploads/20220112_71ce4921653f8.jpg # 备用封�
 # 工具安装与准备工作
 魔法上网、nodejs、git、注册github账号
 ## 魔法上网
+> 如果大家可以正常访问github以及国外资源，请自行略过这一步<br>
+
+由于某些原因,国内用户在访问github、python等开源站或下载站时，会出现网络问题导致的无法进入，魔法上网则会大幅解决这类问题
 
 ## nodejs安装
 官方下载链接：[https://nodejs.org/en](https://nodejs.org/en)<br>
