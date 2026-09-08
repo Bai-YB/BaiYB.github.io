@@ -196,6 +196,7 @@ Hexo框架读取文章和配置
 - Git
 - GitHub 账号
 
+
 ## 网络环境
 
 > 如果大家可以正常访问 GitHub 以及相关国外资源，请直接略过这一部分。<br>
@@ -208,10 +209,9 @@ Hexo 本身并不要求你使用什么特殊网络，但我们在初始化 Hexo�
 
 [https://github.com](https://github.com)
 
-我之前使用过的网络服务：<br>
+如果大家的网络环境不是很好，这边推荐一个便宜大碗的机场<br>
 三毛机场：https://b.smjcgw.com/#/register?code=DhvTqqgN
 
-这里就不过多展开了，大家按照自己的实际网络情况处理即可。
 
 ## Node.js 安装
 
