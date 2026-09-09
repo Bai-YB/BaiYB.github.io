@@ -36,15 +36,6 @@ thumbnail: https://img.baiyb.top/file/blog/%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87.
 
 在 Codex 的 Plus 限额用完以后，我还通过 CC Switch 接入了 DeepSeek。虽然实际体验证明，它在这个项目里并没有想象中那么好用就是了……
 
-后来我又接入了一个价格比较低的中转站，整体使用下来还算稳定：
-
-> [https://vibeapi.cc/sign-up?aff=GBqU](https://vibeapi.cc/sign-up?aff=GBqU)
-
-通过这个邀请码注册还可以额外获得 **5 美元额度**，能白嫖一点是一点。doge
-
-<!-- 配图建议：放一张“AI 工具全家桶”截图，或者 Codex / Claude Code / CC Switch 的拼图 -->
-
-> 🖼️ **配图建议：**这里可以放一张终端里同时开着 Codex、Claude Code 和 CC Switch 的截图。
 
 ## 💡 契机
 

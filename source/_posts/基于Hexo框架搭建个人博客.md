@@ -172,6 +172,7 @@ Hexo框架读取文章和配置
 别人通过网址访问你的博客
 ```
 
+![image.png](https://img.baiyb.top/file/blog/image(1).png)
 这里面几个工具分别负责：
 
 - **Node.js**：Hexo 的运行环境，可以理解成 Hexo 能够在你电脑上工作的基础。
