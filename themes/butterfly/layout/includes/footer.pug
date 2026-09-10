@@ -1,0 +1,78 @@
+// —— 页脚暗色样式覆盖 ——
+style.
+  #footer {
+    background-color: #000 !important;
+    color: #ccc !important;
+  }
+  #footer a {
+    color: #ccc !important;
+  }
+  #footer a:hover {
+    color: #fff !important;
+  }
+
+- const { nav, owner, copyright, custom_text } = theme.footer
+
+if nav
+  .footer-flex
+    for block in nav
+      .footer-flex-items(style=`${ block.width ? 'flex-grow:' + block.width : '' }`)
+        for blockItem in block.content
+          .footer-flex-item
+            .footer-flex-title= blockItem.title
+            .footer-flex-content
+              for subitem in blockItem.item
+                if subitem.html
+                  div!= subitem.html
+                else if subitem.url
+                  a(href=url_for(subitem.url), target='_blank' title=subitem.title)= subitem.title
+                else if subitem.title
+                  div!= subitem.title
+
+.footer-other
+  .footer-copyright
+    if owner.enable
+      - const currentYear = new Date().getFullYear()
+      - const sinceYear = owner.since
+      span.copyright
+        if sinceYear && sinceYear != currentYear
+          != `&copy;${sinceYear} - ${currentYear} By ${config.author}`
+        else
+          != `&copy;${currentYear} By ${config.author}`
+    if copyright.enable
+      - const v = copyright.version ? getVersion() : false
+      span.framework-info
+        if owner.enable && nav
+          span.footer-separator |
+        span= _p('footer.framework') + ' '
+        a(href='https://hexo.io')= `Hexo${ v ? ' ' + v.hexo : '' }`
+        span.footer-separator |
+        span= _p('footer.theme') + ' '
+        a(href='https://github.com/jerryc127/hexo-theme-butterfly')= `Butterfly${ v ? ' ' + v.theme : '' }`
+
+    // 增加 ICP 备案号
+    div(style="margin-top: 6px;")
+      a(href='https://beian.miit.gov.cn', target='_blank' rel='noopener', style='color: #ccc') 京ICP备2025125854号
+
+    // 增加运行时间
+    div#run-time(style="color: #ccc; margin-top: 4px; font-size: 14px;")
+
+  if theme.footer.custom_text
+    .footer_custom_text!= theme.footer.custom_text
+
+// 网站运行时间脚本
+script.
+  function siteRunTime() {
+    const start = new Date("2025-03-11T21:30:00"); // ← 修改为你的网站上线时间
+    const now = new Date();
+    const diff = now - start;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("run-time").innerText =
+      `本站已运行：${days}天 ${hours}小时 ${minutes}分钟 ${seconds}秒`;
+  }
+  setInterval(siteRunTime, 1000);

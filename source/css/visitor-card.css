@@ -1,0 +1,671 @@
+/* =========================================================
+   BaiYB Visitor Card - Aurora Glass
+   为 Butterfly 右侧栏专门压缩后的版本
+   ========================================================= */
+
+
+/* =========================================================
+   外层
+   ========================================================= */
+
+/*
+ * card-widget 本身由 Butterfly 负责：
+ *
+ * - 宽度
+ * - 外边距
+ * - 圆角
+ * - 阴影
+ * - 明暗模式
+ *
+ * 我们不破坏 Butterfly 的侧栏尺寸。
+ */
+
+#baiyb-visitor-card {
+  position: relative !important;
+  inset: auto !important;
+
+  width: auto !important;
+  max-width: 100% !important;
+
+  overflow: hidden;
+
+  transform: none !important;
+
+  font-family: inherit;
+  color: var(--font-color);
+
+  /*
+   * Butterfly 自己已经有 padding，
+   * 这里略微压紧一点，
+   * 避免卡片过高。
+   */
+  padding: 18px !important;
+}
+
+
+/* =========================================================
+   Aurora 背景柔光
+   ========================================================= */
+
+.visitor-aurora-bg {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  border-radius: inherit;
+
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      rgba(116, 128, 255, 0.16),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 5% 90%,
+      rgba(73, 213, 185, 0.10),
+      transparent 34%
+    );
+}
+
+
+.visitor-aurora-bg::before {
+  content: "";
+
+  position: absolute;
+
+  width: 115px;
+  height: 115px;
+
+  right: -45px;
+  top: -50px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      119,
+      104,
+      255,
+      0.11
+    );
+
+  filter:
+    blur(4px);
+}
+
+
+/* 所有真实内容放在柔光上面 */
+
+#baiyb-visitor-card >
+:not(.visitor-aurora-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   顶部
+   ========================================================= */
+
+.visitor-aurora-top {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+
+.visitor-aurora-title-area {
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+/* 小英文 */
+
+.visitor-aurora-eyebrow {
+  margin-bottom: 4px;
+
+  color:
+    var(
+      --theme-color,
+      #49b1f5
+    );
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+
+  opacity: .92;
+}
+
+
+/* 主标题 */
+
+.visitor-aurora-title {
+  color:
+    var(
+      --font-color,
+      inherit
+    );
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  line-height: 1.45;
+}
+
+
+.visitor-aurora-title span {
+  font-size: 15px;
+}
+
+
+/* 描述 */
+
+.visitor-aurora-subtitle {
+  margin-top: 5px;
+
+  overflow: hidden;
+
+  color:
+    var(
+      --font-color,
+      inherit
+    );
+
+  opacity: .58;
+
+  font-size: 11px;
+
+  line-height: 1.55;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+.visitor-aurora-subtitle strong {
+  color:
+    var(
+      --theme-color,
+      #49b1f5
+    );
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   右上角地球
+   ========================================================= */
+
+.visitor-aurora-orb {
+  flex:
+    0
+    0
+    42px;
+
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(
+        --theme-color,
+        #6674ee
+      ),
+      #815ee8
+    );
+
+  box-shadow:
+    0 8px 20px
+    rgba(
+      85,
+      95,
+      220,
+      .20
+    );
+
+  font-size: 20px;
+
+  user-select: none;
+}
+
+
+/* =========================================================
+   公共小标题
+   ========================================================= */
+
+.visitor-aurora-label {
+  overflow: hidden;
+
+  margin-bottom: 3px;
+
+  color:
+    var(
+      --font-color,
+      inherit
+    );
+
+  opacity: .48;
+
+  font-size: 9px;
+
+  line-height: 1.4;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   当前位置
+   ========================================================= */
+
+.visitor-aurora-location {
+  margin-top: 13px;
+
+  padding: 10px 11px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(
+      127,
+      127,
+      127,
+      .10
+    );
+
+  border-radius: 11px;
+
+  background:
+    rgba(
+      127,
+      127,
+      127,
+      .045
+    );
+}
+
+
+.visitor-aurora-main-value {
+  overflow: hidden;
+
+  color:
+    var(
+      --font-color,
+      inherit
+    );
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  line-height: 1.45;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   IP + 距离 双栏
+   ========================================================= */
+
+.visitor-aurora-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 7px;
+
+  margin-top: 7px;
+}
+
+
+.visitor-aurora-metric {
+  min-width: 0;
+
+  padding: 9px 10px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(
+      127,
+      127,
+      127,
+      .10
+    );
+
+  border-radius: 11px;
+
+  background:
+    rgba(
+      127,
+      127,
+      127,
+      .04
+    );
+
+  transition:
+    transform .2s ease,
+    background-color .2s ease;
+}
+
+
+.visitor-aurora-metric:hover {
+  transform:
+    translateY(-1px);
+
+  background:
+    rgba(
+      127,
+      127,
+      127,
+      .07
+    );
+}
+
+
+.visitor-aurora-value {
+  overflow: hidden;
+
+  color:
+    var(
+      --font-color,
+      inherit
+    );
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  line-height: 1.45;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   问候条
+   ========================================================= */
+
+.visitor-aurora-greeting {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 7px;
+
+  padding: 9px 10px;
+
+  overflow: hidden;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(
+        255,
+        193,
+        68,
+        .10
+      ),
+      rgba(
+        255,
+        115,
+        165,
+        .065
+      )
+    );
+}
+
+
+.visitor-aurora-greeting-icon {
+  flex:
+    0
+    0
+    23px;
+
+  width: 23px;
+
+  font-size: 18px;
+
+  line-height: 1;
+
+  text-align: center;
+}
+
+
+.visitor-aurora-greeting-content {
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+.visitor-aurora-greeting-text {
+  overflow: hidden;
+
+  color:
+    var(
+      --font-color,
+      inherit
+    );
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   暗色模式
+   ========================================================= */
+
+/*
+ * 不做强制黑底/白底，
+ * 继续使用 Butterfly 自己的 card-widget 背景。
+ */
+
+[data-theme="dark"]
+#baiyb-visitor-card {
+  color:
+    var(
+      --font-color,
+      inherit
+    );
+}
+
+
+[data-theme="dark"]
+.visitor-aurora-bg {
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      rgba(
+        116,
+        128,
+        255,
+        .15
+      ),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 5% 90%,
+      rgba(
+        73,
+        213,
+        185,
+        .07
+      ),
+      transparent 34%
+    );
+}
+
+
+[data-theme="dark"]
+.visitor-aurora-location,
+[data-theme="dark"]
+.visitor-aurora-metric {
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      .06
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .035
+    );
+}
+
+
+[data-theme="dark"]
+.visitor-aurora-metric:hover {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .06
+    );
+}
+
+
+/* =========================================================
+   防止 sticky
+   ========================================================= */
+
+#aside-content >
+#baiyb-visitor-card {
+  position: relative !important;
+
+  top: auto !important;
+  bottom: auto !important;
+
+  left: auto !important;
+  right: auto !important;
+
+  transform: none !important;
+}
+
+
+/* =========================================================
+   窄侧栏兼容
+   ========================================================= */
+
+@media screen and
+(max-width: 1100px) {
+
+  #baiyb-visitor-card {
+    padding:
+      15px !important;
+  }
+
+
+  .visitor-aurora-title {
+    font-size:
+      15px;
+  }
+
+
+  .visitor-aurora-orb {
+    flex-basis:
+      38px;
+
+    width:
+      38px;
+
+    height:
+      38px;
+
+    border-radius:
+      12px;
+
+    font-size:
+      18px;
+  }
+
+
+  .visitor-aurora-grid {
+    gap:
+      6px;
+  }
+
+
+  .visitor-aurora-metric {
+    padding:
+      8px;
+  }
+
+}
+
+
+/* =========================================================
+   手机侧栏出现时
+   ========================================================= */
+
+@media screen and
+(max-width: 768px) {
+
+  #baiyb-visitor-card {
+    width:
+      100% !important;
+
+    padding:
+      16px !important;
+  }
+
+
+  .visitor-aurora-main-value,
+  .visitor-aurora-value,
+  .visitor-aurora-greeting-text {
+    white-space:
+      normal;
+  }
+
+}
