@@ -350,7 +350,7 @@
   <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#49b1f5);opacity:.4;"></div>
   <span style="font-size:15px;">⬡</span>
   <span style="font-size:12px;font-weight:700;letter-spacing:.12em;white-space:nowrap;">
-    03 · Hexo部署
+    03 · 本地部署Hexo
   </span>
   <span style="font-size:15px;">⬡</span>
   <div style="flex:1;height:1px;background:linear-gradient(90deg,#49b1f5,transparent);opacity:.4;"></div>
@@ -366,24 +366,24 @@
 <blockquote>
 <p>注意！<br><br><strong>初始化时目标文件夹最好是空文件夹。</strong><br><br><strong>路径建议尽量不要出现中文、特殊符号以及过于复杂的目录层级。</strong><br><br>虽然很多软件现在对中文路径兼容已经很好了，但一旦某个插件没处理好编码问题，排查起来真的很痛苦。</p>
 </blockquote>
-<p><img src="https://free.picui.cn/free/2025/06/27/685ebb6fa1f75.png"><br></p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(6).png" alt="image.png"><br>例如我就单独把博客文件存储在<code>D:\hexo</code>这个目录下，对于文件的查找和编辑都非常方便</p>
 <h3 id="Step2：安装-Hexo-CLI"><a href="#Step2：安装-Hexo-CLI" class="headerlink" title="Step2：安装 Hexo CLI"></a>Step2：安装 Hexo CLI</h3><p>在博客文件夹内右键，打开 <code>Git Bash</code>。<br></p>
-<p><img src="https://free.picui.cn/free/2025/06/27/685ebc36e2319.png"><br></p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(7).png" alt="image.png"></p>
 <p>输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
 <p>这一步的意思是在电脑上全局安装 Hexo 的命令行工具。</p>
-<p><img src="https://free.picui.cn/free/2025/06/27/685ebd1c022db.png"><br></p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(8).png" alt="image.png"></p>
 <p>安装结束后输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://free.picui.cn/free/2025/06/27/685ebd705f1c7.png"><br></p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(9).png" alt="image.png"></p>
 <p>只要能看到 Hexo、Node.js 等版本信息，就说明 Hexo CLI 已经可以正常使用了。</p>
 <p>如果这里就报错，不建议继续往下硬走，因为后面的命令都会依赖 Hexo。先把当前问题解决干净再继续。</p>
 <h3 id="Step3：初始化-Hexo"><a href="#Step3：初始化-Hexo" class="headerlink" title="Step3：初始化 Hexo"></a>Step3：初始化 Hexo</h3><p>确认自己当前就在准备好的空文件夹中，然后输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://free.picui.cn/free/2025/06/27/685ebe36de35b.png"><br></p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(10).png" alt="image.png"></p>
 <p>Hexo 会自动把博客需要的基础文件拉下来，并初始化项目结构。</p>
 <p>正常情况下，完成后你会看到类似下面这些文件：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">blog/</span><br><span class="line">├─ _config.yml</span><br><span class="line">├─ package.json</span><br><span class="line">├─ scaffolds/</span><br><span class="line">├─ source/</span><br><span class="line">│  └─ _posts/</span><br><span class="line">└─ themes/</span><br></pre></td></tr></table></figure>
@@ -397,7 +397,7 @@
 <li><code>public/</code>：执行生成命令以后出现，里面是最终生成出来的网站文件。</li>
 </ul>
 <blockquote>
-<p>有些电脑在这一步可能会出现 GitHub 连接失败，例如 <code>disconnect with github</code>、<code>connection reset</code> 或克隆失败。<br><br>首先还是建议检查网络和 Git 是否正常。<br><br>如果实在无法通过在线初始化，也可以使用我之前准备的文件： <a href="/download/Hexo-files.zip">Hexo-files.zip</a><br><br>解压后，将文件复制到博客文件夹中，再执行一次 <code>npm install</code> 安装依赖。<br><br><img src="https://free.picui.cn/free/2025/06/28/685ec0922708a.png"><br></p>
+<p>有些电脑在这一步可能会出现 GitHub 连接失败，例如 <code>disconnect with github</code>、<code>connection reset</code> 或克隆失败。<br><br>首先还是建议检查网络和 Git 是否正常。<br><br>如果实在无法通过在线初始化，也可以使用我之前准备的文件： <a href="/download/Hexo-files.zip">Hexo-files.zip</a><br><br>解压后，将文件复制到博客文件夹中，再执行一次 <code>npm install</code> 安装依赖。<br></p>
 </blockquote>
 <h3 id="Step4：第一次本地运行"><a href="#Step4：第一次本地运行" class="headerlink" title="Step4：第一次本地运行"></a>Step4：第一次本地运行</h3><p>输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
@@ -407,12 +407,12 @@
 <li><code>hexo g</code>：<code>hexo generate</code> 的缩写，生成静态网页；</li>
 <li><code>hexo s</code>：<code>hexo server</code> 的缩写，开启本地预览服务器。</li>
 </ul>
-<p><img src="https://free.picui.cn/free/2025/06/28/685ec1be5412c.png"><br></p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(11).png" alt="image.png"></p>
 <p>正常情况下，终端会出现：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:4000/</span><br></pre></td></tr></table></figure>
 
 <p>按住 <code>Ctrl</code> 点击网址，或者直接复制到浏览器地址栏。</p>
-<p><img src="https://free.picui.cn/free/2025/06/28/685ec204680d3.png"><br></p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(12).png" alt="image.png"></p>
 <p>如果你已经看到 Hexo 默认的 Landscape 页面，那么恭喜你——到这里，其实你已经真正拥有了一个可以运行的网站。</p>
 <p>只不过现在这个网站还只能在你自己的电脑上访问。</p>
 <p>这个时候可以先别急着往下走，稍微感受一下这个过程：几分钟前还是一个空文件夹，现在浏览器里已经出现了一个完整网页。虽然它还长得很“默认”，但后面所有的主题、美化、文章和功能，都是从这里慢慢长出来的。</p>
@@ -420,6 +420,16 @@
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + C</span><br></pre></td></tr></table></figure>
 
 <p>停止本地服务器。</p>
+<div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:52px 0 38px;color:#49b1f5;">
+  <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#49b1f5);opacity:.4;"></div>
+  <span style="font-size:15px;">⬡</span>
+  <span style="font-size:12px;font-weight:700;letter-spacing:.12em;white-space:nowrap;">
+    04 · 部署到互联网
+  </span>
+  <span style="font-size:15px;">⬡</span>
+  <div style="flex:1;height:1px;background:linear-gradient(90deg,#49b1f5,transparent);opacity:.4;"></div>
+</div>
+
 <h1 id="部署到-GitHub-Pages"><a href="#部署到-GitHub-Pages" class="headerlink" title="部署到 GitHub Pages"></a>部署到 GitHub Pages</h1><p>现在博客只能通过 <code>localhost:4000</code> 在自己电脑上访问。</p>
 <p>下一步我们要做的，就是把它真正放到互联网上。</p>
 <p>这里使用 GitHub Pages。对于个人博客来说，它的优点很明显：免费、和 GitHub 仓库结合紧密，而且对于 Hexo 这种静态站点非常合适。</p>
