@@ -48,7 +48,7 @@ code_blocks:
 # Formal:
 #   icon: link || the description || color
 social:
-   fab fa-github: https://github.com/Soupcpu || Github || '#24292e'
+   fab fa-github: https://github.com/Bai-YB || Github || '#24292e'
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
 
 # --------------------------------------
@@ -270,6 +270,7 @@ footer:
 # --------------------------------------
 
 aside:
+
   enable: true
   hide: false
   # Show the button to hide the aside in bottom right button
@@ -288,7 +289,7 @@ aside:
       enable: true
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/Soupcpu
+      link: https://github.com/Bai-YB
   card_announcement:
     enable: true
     content: 欢迎访问我的个人网站，我会在这里分享我所学到的知识和经验，希望能够帮助到你。

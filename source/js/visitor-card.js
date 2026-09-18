@@ -2,63 +2,120 @@
   "use strict";
 
   const CONFIG = {
-    // 博主坐标
+    workerUrl:
+      "https:" +
+      "//baiyb-visitor-api.2191724299.workers.dev",
+
     blogLatitude: 40.13845,
     blogLongitude: 116.23488,
 
-    // 访客 IP / 地理位置接口
-    apiUrl: "https://ipapi.co/json/",
+    cacheTime: 10 * 60 * 1000,
+    requestTimeout: 5000,
 
-    // false = 显示完整 IP
-    // true  = 例如 211.173.xxx.xxx
-    maskIp: false,
-
-    // 首页路径
-    // 如果你的博客直接部署在域名根目录，保持 "/" 即可
-    homePath: "/",
-
-    // 缓存访客信息，避免 PJAX 来回切换重复请求
-    cacheTime: 30 * 60 * 1000
+    // false = 完整显示 IP
+    // true = 对 IP 打码
+    maskIp: false
   };
 
-  const CACHE_KEY = "baiybVisitorAuroraData";
-  const CACHE_TIME_KEY = "baiybVisitorAuroraTime";
+  const CACHE_KEY = "baiybVisitorWorkerData";
+  const CACHE_TIME_KEY = "baiybVisitorWorkerTime";
 
-  /* ===============================
-     是否为真正的首页
-     =============================== */
+  /* =========================
+     判断是否主页
+     ========================= */
 
   function isHomePage() {
-    const path = window.location.pathname;
-
-    const isRoot =
-      path === CONFIG.homePath ||
-      path === CONFIG.homePath + "index.html";
-
-    const hasRecentPosts =
-      document.querySelector("#recent-posts") !== null;
-
-    const isPost =
-      document.querySelector("#post") !== null;
-
-    return isRoot && hasRecentPosts && !isPost;
+    return (
+      (
+        location.pathname === "/" ||
+        location.pathname === "/index.html"
+      ) &&
+      document.querySelector("#recent-posts") !== null &&
+      document.querySelector("#post") === null
+    );
   }
 
-  /* ===============================
-     距离计算
-     =============================== */
+  /* =========================
+     IP 处理
+     ========================= */
 
-  function getDistanceKm(lat1, lon1, lat2, lon2) {
+  function isIPv4(ip) {
+    return (
+      typeof ip === "string" &&
+      /^(\d{1,3}\.){3}\d{1,3}$/.test(ip)
+    );
+  }
+
+  function isIPv6(ip) {
+    return (
+      typeof ip === "string" &&
+      ip.includes(":")
+    );
+  }
+
+  function formatIp(ip) {
+    if (!ip) {
+      return "未知";
+    }
+
+    if (!CONFIG.maskIp) {
+      return ip;
+    }
+
+    if (isIPv4(ip)) {
+      const parts = ip.split(".");
+
+      return (
+        parts[0] +
+        "." +
+        parts[1] +
+        ".xxx.xxx"
+      );
+    }
+
+    if (isIPv6(ip)) {
+      const parts =
+        ip
+          .split(":")
+          .filter(Boolean);
+
+      return (
+        parts
+          .slice(0, 3)
+          .join(":") +
+        "::****"
+      );
+    }
+
+    return ip;
+  }
+
+  /* =========================
+     距离
+     ========================= */
+
+  function getDistanceKm(
+    lat1,
+    lon1,
+    lat2,
+    lon2
+  ) {
     const R = 6371.0088;
-    const toRad = value => value * Math.PI / 180;
 
-    const dLat = toRad(lat2 - lat1);
-    const dLon = toRad(lon2 - lon1);
+    const rad =
+      value =>
+        value * Math.PI / 180;
+
+    const dLat =
+      rad(lat2 - lat1);
+
+    const dLon =
+      rad(lon2 - lon1);
 
     const a =
       Math.sin(dLat / 2) ** 2 +
-      Math.cos(toRad(lat1)) *
-      Math.cos(toRad(lat2)) *
+      Math.cos(rad(lat1)) *
+      Math.cos(rad(lat2)) *
       Math.sin(dLon / 2) ** 2;
 
     const c =
@@ -71,40 +128,9 @@
     return Math.round(R * c);
   }
 
-  /* ===============================
-     IP 显示
-     =============================== */
-
-  function formatIp(ip) {
-    if (!ip) return "未知";
-
-    if (!CONFIG.maskIp) {
-      return ip;
-    }
-
-    if (ip.includes(".")) {
-      const parts = ip.split(".");
-
-      if (parts.length === 4) {
-        return `${parts[0]}.${parts[1]}.xxx.xxx`;
-      }
-    }
-
-    if (ip.includes(":")) {
-      const parts =
-        ip
-          .split(":")
-          .filter(Boolean);
-
-      return `${parts.slice(0, 3).join(":")}::****`;
-    }
-
-    return ip;
-  }
-
-  /* ===============================
-     地区
-     =============================== */
+  /* =========================
+     地区文字
+     ========================= */
 
   function buildLocation(data) {
     const parts = [
@@ -113,20 +139,23 @@
       data.city
     ].filter(Boolean);
 
-    return [...new Set(parts)].join(" · ") || "未知地区";
+    return (
+      [...new Set(parts)].join(" · ") ||
+      "暂时无法定位"
+    );
   }
 
-  /* ===============================
-     当地时间
-     =============================== */
+  /* =========================
+     时间 / 问候
+     ========================= */
 
-  function getHour(timeZone) {
+  function getHour(timezone) {
     try {
       const parts =
         new Intl.DateTimeFormat(
           "zh-CN",
           {
-            timeZone: timeZone || undefined,
+            timeZone: timezone || undefined,
             hour: "2-digit",
             hourCycle: "h23"
           }
@@ -139,21 +168,20 @@
           )?.value
         );
 
-      return Number.isFinite(hour)
-        ? hour
-        : new Date().getHours();
+      if (Number.isFinite(hour)) {
+        return hour;
+      }
+    } catch {}
 
-    } catch {
-      return new Date().getHours();
-    }
+    return new Date().getHours();
   }
 
-  function getGreeting(timeZone) {
-    const hour = getHour(timeZone);
+  function getGreeting(timezone) {
+    const hour = getHour(timezone);
 
     if (hour >= 5 && hour < 9) {
       return {
-        icon: "☀️",
+        icon: "🌅",
         text: "早上好，新的一天开始了！"
       };
     }
@@ -192,32 +220,30 @@
     };
   }
 
-  /* ===============================
+  /* =========================
      创建卡片
-     =============================== */
+     ========================= */
 
   function createCard() {
     if (!isHomePage()) {
       return null;
     }
 
-    const old =
+    const existing =
       document.getElementById(
         "baiyb-visitor-card"
       );
 
-    if (old) {
-      return old;
+    if (existing) {
+      return existing;
     }
 
     const card =
       document.createElement("div");
 
-    /*
-     * Butterfly 原生 card-widget
-     * 保证宽度、圆角、阴影、外边距一致
-     */
-    card.id = "baiyb-visitor-card";
+    card.id =
+      "baiyb-visitor-card";
+
     card.className =
       "card-widget baiyb-visitor-aurora";
 
@@ -225,31 +251,38 @@
       <div class="visitor-aurora-bg"></div>
 
       <div class="visitor-aurora-top">
+
         <div class="visitor-aurora-title-area">
+
           <div class="visitor-aurora-eyebrow">
             VISITOR INSIGHT
           </div>
 
           <div class="visitor-aurora-title">
-            你好，远道而来的朋友
-            <span>👋</span>
+            欢迎来自
+            <span id="visitor-title-country">
+              神秘地区
+            </span>
+            的朋友 👋
           </div>
 
-          <div class="visitor-aurora-subtitle">
-            来自
-            <strong id="visitor-country">
-              神秘地区
-            </strong>
-            的一次小小相遇
+          <div
+            class="visitor-aurora-subtitle"
+            id="visitor-title-location"
+          >
+            正在确认你从哪里来...
           </div>
+
         </div>
 
         <div class="visitor-aurora-orb">
           🌍
         </div>
+
       </div>
 
       <div class="visitor-aurora-location">
+
         <div class="visitor-aurora-label">
           📍 当前位置
         </div>
@@ -260,10 +293,13 @@
         >
           正在获取...
         </div>
+
       </div>
 
       <div class="visitor-aurora-grid">
+
         <div class="visitor-aurora-metric">
+
           <div class="visitor-aurora-label">
             🌐 IP 地址
           </div>
@@ -274,9 +310,11 @@
           >
             正在获取...
           </div>
+
         </div>
 
         <div class="visitor-aurora-metric">
+
           <div class="visitor-aurora-label">
             🧭 距离博主
           </div>
@@ -287,10 +325,13 @@
           >
             正在计算...
           </div>
+
         </div>
+
       </div>
 
       <div class="visitor-aurora-greeting">
+
         <span
           class="visitor-aurora-greeting-icon"
           id="visitor-greeting-icon"
@@ -299,6 +340,7 @@
         </span>
 
         <div class="visitor-aurora-greeting-content">
+
           <div class="visitor-aurora-label">
             此刻
           </div>
@@ -309,7 +351,9 @@
           >
             欢迎来到我的博客
           </div>
+
         </div>
+
       </div>
     `;
 
@@ -322,9 +366,6 @@
       return null;
     }
 
-    /*
-     * 优先插在公告下面
-     */
     const announcement =
       aside.querySelector(
         ".card-announcement"
@@ -339,10 +380,6 @@
       return card;
     }
 
-    /*
-     * 没有公告时，插在 sticky_layout 前
-     * 但绝不进入 sticky_layout
-     */
     const sticky =
       aside.querySelector(
         ".sticky_layout"
@@ -362,54 +399,79 @@
     return card;
   }
 
-  /* ===============================
+  /* =========================
      更新卡片
-     =============================== */
+     ========================= */
 
   function updateCard(data) {
-    if (!data) return;
-
     const country =
       data.country_name ||
-      "神秘地区";
+      data.country_code ||
+      "未知地区";
 
-    const location =
+    const locationText =
       buildLocation(data);
 
-    const ip =
-      formatIp(data.ip);
+    /* 顶部动态国家 */
 
-    const countryEl =
+    const titleCountry =
       document.getElementById(
-        "visitor-country"
+        "visitor-title-country"
       );
 
-    const locationEl =
+    if (titleCountry) {
+      titleCountry.textContent =
+        country;
+    }
+
+    /* 顶部动态城市 */
+
+    const titleLocation =
+      document.getElementById(
+        "visitor-title-location"
+      );
+
+    if (titleLocation) {
+      titleLocation.textContent =
+        locationText;
+    }
+
+    /* 当前位置 */
+
+    const locationElement =
       document.getElementById(
         "visitor-location"
       );
 
-    const ipEl =
+    if (locationElement) {
+      locationElement.textContent =
+        locationText;
+    }
+
+    /* IP */
+
+    const ipElement =
       document.getElementById(
         "visitor-ip"
       );
 
-    const distanceEl =
-      document.getElementById(
-        "visitor-distance"
-      );
+    if (ipElement) {
+      ipElement.textContent =
+        formatIp(data.ip);
 
-    if (countryEl) {
-      countryEl.textContent = country;
+      ipElement.title =
+        data.ip || "";
+
+      if (isIPv6(data.ip)) {
+        ipElement.style.fontSize =
+          "9px";
+      } else {
+        ipElement.style.fontSize =
+          "";
+      }
     }
 
-    if (locationEl) {
-      locationEl.textContent = location;
-    }
-
-    if (ipEl) {
-      ipEl.textContent = ip;
-    }
+    /* 距离 */
 
     const lat =
       Number(data.latitude);
@@ -417,8 +479,12 @@
     const lon =
       Number(data.longitude);
 
+    const distanceElement =
+      document.getElementById(
+        "visitor-distance"
+      );
+
     if (
-      distanceEl &&
       Number.isFinite(lat) &&
       Number.isFinite(lon)
     ) {
@@ -430,18 +496,19 @@
           CONFIG.blogLongitude
         );
 
-      distanceEl.textContent =
-        `约 ${distance.toLocaleString("zh-CN")} 公里`;
-
-    } else if (distanceEl) {
-      distanceEl.textContent =
+      if (distanceElement) {
+        distanceElement.textContent =
+          `约 ${distance.toLocaleString("zh-CN")} 公里`;
+      }
+    } else if (distanceElement) {
+      distanceElement.textContent =
         "暂时无法计算";
     }
 
+    /* 问候 */
+
     const greeting =
-      getGreeting(
-        data.timezone
-      );
+      getGreeting(data.timezone);
 
     const greetingIcon =
       document.getElementById(
@@ -464,13 +531,13 @@
     }
   }
 
-  /* ===============================
+  /* =========================
      缓存
-     =============================== */
+     ========================= */
 
   function getCache() {
     try {
-      const data =
+      const json =
         sessionStorage.getItem(
           CACHE_KEY
         );
@@ -482,7 +549,7 @@
           )
         );
 
-      if (!data || !time) {
+      if (!json || !time) {
         return null;
       }
 
@@ -501,7 +568,7 @@
         return null;
       }
 
-      return JSON.parse(data);
+      return JSON.parse(json);
 
     } catch {
       return null;
@@ -519,28 +586,30 @@
         CACHE_TIME_KEY,
         String(Date.now())
       );
-
     } catch {}
   }
 
-  /* ===============================
-     加载访客数据
-     =============================== */
+  /* =========================
+     Worker
+     ========================= */
 
-  async function loadVisitorData() {
-    const cache = getCache();
+  async function getVisitorInfo() {
+    const controller =
+      new AbortController();
 
-    if (cache) {
-      updateCard(cache);
-      return;
-    }
+    const timer =
+      setTimeout(
+        () => controller.abort(),
+        CONFIG.requestTimeout
+      );
 
     try {
       const response =
         await fetch(
-          CONFIG.apiUrl,
+          CONFIG.workerUrl,
           {
             cache: "no-store",
+            signal: controller.signal,
             headers: {
               Accept: "application/json"
             }
@@ -549,32 +618,65 @@
 
       if (!response.ok) {
         throw new Error(
-          `HTTP ${response.status}`
+          `Worker HTTP ${response.status}`
         );
       }
 
       const data =
         await response.json();
 
-      if (data.error) {
+      if (!data.success) {
         throw new Error(
-          data.reason ||
-          "API Error"
+          "Worker 返回失败"
         );
       }
+
+      console.log(
+        "[Visitor Card] Worker 数据：",
+        data
+      );
+
+      return data;
+
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
+  /* =========================
+     加载数据
+     ========================= */
+
+  async function loadVisitorData() {
+    const cached =
+      getCache();
+
+    if (cached) {
+      updateCard(cached);
+      return;
+    }
+
+    try {
+      const data =
+        await getVisitorInfo();
 
       saveCache(data);
       updateCard(data);
 
     } catch (error) {
-      console.warn(
-        "[Visitor Aurora]",
+      console.error(
+        "[Visitor Card] Worker 请求失败：",
         error
       );
 
-      const country =
+      const titleCountry =
         document.getElementById(
-          "visitor-country"
+          "visitor-title-country"
+        );
+
+      const titleLocation =
+        document.getElementById(
+          "visitor-title-location"
         );
 
       const location =
@@ -592,69 +694,44 @@
           "visitor-distance"
         );
 
-      if (country) {
-        country.textContent =
-          "互联网";
+      if (titleCountry) {
+        titleCountry.textContent =
+          "神秘地区";
+      }
+
+      if (titleLocation) {
+        titleLocation.textContent =
+          "暂时无法确认位置";
       }
 
       if (location) {
         location.textContent =
-          "来自互联网的朋友";
+          "暂时无法定位";
       }
 
       if (ip) {
         ip.textContent =
-          "获取失败";
+          "暂时无法获取";
       }
 
       if (distance) {
         distance.textContent =
           "暂时无法计算";
       }
-
-      const greeting =
-        getGreeting();
-
-      const icon =
-        document.getElementById(
-          "visitor-greeting-icon"
-        );
-
-      const text =
-        document.getElementById(
-          "visitor-greeting"
-        );
-
-      if (icon) {
-        icon.textContent =
-          greeting.icon;
-      }
-
-      if (text) {
-        text.textContent =
-          greeting.text;
-      }
     }
   }
 
-  /* ===============================
-     删除
-     =============================== */
+  /* =========================
+     初始化
+     ========================= */
 
   function removeCard() {
-    const card =
-      document.getElementById(
+    document
+      .getElementById(
         "baiyb-visitor-card"
-      );
-
-    if (card) {
-      card.remove();
-    }
+      )
+      ?.remove();
   }
-
-  /* ===============================
-     初始化
-     =============================== */
 
   async function init() {
     if (!isHomePage()) {
@@ -662,22 +739,20 @@
       return;
     }
 
-    const existing =
+    if (
       document.getElementById(
         "baiyb-visitor-card"
-      );
-
-    if (existing) {
+      )
+    ) {
       return;
     }
 
-    const card = createCard();
+    const card =
+      createCard();
 
-    if (!card) {
-      return;
+    if (card) {
+      await loadVisitorData();
     }
-
-    await loadVisitorData();
   }
 
   if (
@@ -695,16 +770,10 @@
     init();
   }
 
-  /*
-   * Butterfly PJAX
-   */
   document.addEventListener(
     "pjax:complete",
     () => {
-      requestAnimationFrame(
-        init
-      );
+      requestAnimationFrame(init);
     }
   );
-
 })();

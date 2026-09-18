@@ -11,7 +11,7 @@ top_img: https://img.baiyb.top/file/blog/1771128027478_qqansv7wmrkglaycwaao7t0zf
 banner: https://img.baiyb.top/file/blog/1771128027478_qqansv7wmrkglaycwaao7t0zf0zhdfg.png
 thumbnail: https://i1.mcobj.com/uploads/20220112_71ce4921653f8.jpg
 ---
-
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image.png)
 # 序言
 
 ## 前言
@@ -35,9 +35,9 @@ thumbnail: https://i1.mcobj.com/uploads/20220112_71ce4921653f8.jpg
 如果最后当你第一次在浏览器里输入自己的网址，看到那个真正属于自己的页面出现时，你应该也会和我当初一样，觉得前面那些报错好像突然都值了。
 
 > 注意！<br>
-> **请保证自己的电脑可以正常访问 `github.com`，很多初始化、主题下载以及后续部署都会依赖 GitHub。**<br>
-> **建议会基本使用 AI，例如 `ChatGPT` 或 `DeepSeek`。遇到报错时，把完整报错和刚刚执行过的步骤一起发给 AI，通常比只发一句“为什么报错”有效得多。**<br>
-> **由于我手头主要是 Windows 设备，并且课程中绝大多数同学使用的也是 Windows，因此本文以 `Windows` 为主要环境。**<br>
+> **请保证自己的电脑可以正常访问 `github.com`，很多初始化、主题下载以及后续部署都会依赖 GitHub。**
+> **建议会基本使用 AI，例如 `ChatGPT` 或 `DeepSeek`。遇到报错时，把完整报错和刚刚执行过的步骤一起发给 AI，通常比只发一句“为什么报错”有效得多。**
+> **由于我手头主要是 Windows 设备，并且课程中绝大多数同学使用的也是 Windows，因此本文以 `Windows` 为主要环境。**
 > **本文最初写于 2025 年，部分软件界面、版本号以及 GitHub 页面布局以后可能发生变化。若截图和你的页面略有不同，不必慌，先看功能和选项名称是否一致。**
 
 ## 这篇文章适合谁
@@ -75,6 +75,15 @@ Hexo 官方文档：[https://hexo.io/zh-cn/docs/](https://hexo.io/zh-cn/docs/)
 - XBX：最早给我提供了 Hexo 与 Butterfly 的基础教程，也让我第一次意识到一个 Hexo 博客原来可以被折腾到这种程度。后来不管是博客美化、交互效果，还是部署和访问优化，他的博客都给了我不少思路。【[点击访问 XBXyftx 的博客](https://xbxyftx.top/)】<br>
 - ZXJC：提供了基础教程【[点击查看PDF文件](/download/Hexo-Bulider.pdf)】，在实际搭建过程中也一起碰到、解决了不少问题。<br>
 - ChatGPT：在看到一些让人完全摸不着头脑的报错时，确实救过我很多次。它不一定每次第一次就能给对答案，但在“帮我理清楚到底哪一步出了问题”这件事上真的很好用。<br>
+<div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:52px 0 38px;color:#49b1f5;">
+  <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#49b1f5);opacity:.4;"></div>
+  <span style="font-size:15px;">⬡</span>
+  <span style="font-size:12px;font-weight:700;letter-spacing:.12em;white-space:nowrap;">
+    01 · 开始
+  </span>
+  <span style="font-size:15px;">⬡</span>
+  <div style="flex:1;height:1px;background:linear-gradient(90deg,#49b1f5,transparent);opacity:.4;"></div>
+</div>
 
 # 什么是博客
 
@@ -188,6 +197,16 @@ Hexo框架读取文章和配置
 
 只要能先缩小范围，排查就已经成功一半了。
 
+<div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:52px 0 38px;color:#49b1f5;">
+  <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#49b1f5);opacity:.4;"></div>
+  <span style="font-size:15px;">⬡</span>
+  <span style="font-size:12px;font-weight:700;letter-spacing:.12em;white-space:nowrap;">
+    02 · 基础环境搭建
+  </span>
+  <span style="font-size:15px;">⬡</span>
+  <div style="flex:1;height:1px;background:linear-gradient(90deg,#49b1f5,transparent);opacity:.4;"></div>
+</div>
+
 # 工具安装与准备工作
 
 正式开始前，我们需要准备：
@@ -215,10 +234,10 @@ Hexo 本身并不要求你使用什么特殊网络，但我们在初始化 Hexo�
 
 
 ## Node.js 安装
-
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(2).png)
 Node.js 是 Hexo 的运行基础，没有它，后面的 `npm` 和 `hexo` 命令都无法正常工作。
 
-官方下载链接：[https://nodejs.org/en](https://nodejs.org/en)<br>
+官方下载链接：[https://nodejs.org/en](https://nodejs.org/cn)<br>
 我之前留存的安装包（可能不是官网最新版）：【[点击下载](/download/node-v22.16.0-win-x64.zip)】<br>
 教程视频：【[Nodejs安装零基础教程2025](https://www.bilibili.com/video/BV1sbjgzwEBX/?share_source=copy_web&vd_source=76ef81a3c7f598cf017a43cc75c2cf93)】<br>
 
@@ -233,12 +252,15 @@ node -v
 ```bash
 npm -v
 ```
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(1).png)
 
 如果两条命令都能正常显示版本号，说明 Node.js 和 npm 已经成功加入环境变量。
 
 > 如果出现“`node` 不是内部或外部命令”之类的提示，通常不是 Hexo 的问题，而是 Node.js 没装好或者环境变量没有生效。可以先尝试重开终端，仍然不行再重新安装 Node.js。
 
 ## Git 安装
+
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(3).png)
 
 Git 后面会负责两件非常重要的事情：
 
@@ -255,9 +277,13 @@ Git 后面会负责两件非常重要的事情：
 git --version
 ```
 
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(4).png)
+
 能够显示 Git 版本号，就说明安装正常。
 
 ## GitHub 账号注册
+
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(5).png)
 
 GitHub 官方注册链接：[https://github.com/signup](https://github.com/signup)<br>
 视频教程：【[GitHub注册账号](https://www.bilibili.com/video/BV1eE421M7Wr/?share_source=copy_web&vd_source=76ef81a3c7f598cf017a43cc75c2cf93)】<br>
@@ -267,7 +293,17 @@ GitHub 官方注册链接：[https://github.com/signup](https://github.com/signu
 - GitHub 用户名
 - 注册邮箱
 
-后面配置 Git 和 SSH Key 时都会用到。
+**后面配置 Git 和 SSH Key 时都会用到。**
+
+<div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:52px 0 38px;color:#49b1f5;">
+  <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#49b1f5);opacity:.4;"></div>
+  <span style="font-size:15px;">⬡</span>
+  <span style="font-size:12px;font-weight:700;letter-spacing:.12em;white-space:nowrap;">
+    03 · 本地部署Hexo
+  </span>
+  <span style="font-size:15px;">⬡</span>
+  <div style="flex:1;height:1px;background:linear-gradient(90deg,#49b1f5,transparent);opacity:.4;"></div>
+</div>
 
 # Hexo 框架部署
 
@@ -296,13 +332,14 @@ F:\blog
 > **路径建议尽量不要出现中文、特殊符号以及过于复杂的目录层级。**<br>
 > 虽然很多软件现在对中文路径兼容已经很好了，但一旦某个插件没处理好编码问题，排查起来真的很痛苦。
 
-![](https://free.picui.cn/free/2025/06/27/685ebb6fa1f75.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(6).png)
+例如我就单独把博客文件存储在`D:\hexo`这个目录下，对于文件的查找和编辑都非常方便
 
 ### Step2：安装 Hexo CLI
 
 在博客文件夹内右键，打开 `Git Bash`。<br>
 
-![](https://free.picui.cn/free/2025/06/27/685ebc36e2319.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(7).png)
 
 输入：
 
@@ -312,7 +349,7 @@ npm install -g hexo-cli
 
 这一步的意思是在电脑上全局安装 Hexo 的命令行工具。
 
-![](https://free.picui.cn/free/2025/06/27/685ebd1c022db.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(8).png)
 
 安装结束后输入：
 
@@ -320,7 +357,7 @@ npm install -g hexo-cli
 hexo -v
 ```
 
-![](https://free.picui.cn/free/2025/06/27/685ebd705f1c7.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(9).png)
 
 只要能看到 Hexo、Node.js 等版本信息，就说明 Hexo CLI 已经可以正常使用了。
 
@@ -334,7 +371,7 @@ hexo -v
 hexo init
 ```
 
-![](https://free.picui.cn/free/2025/06/27/685ebe36de35b.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(10).png)
 
 Hexo 会自动把博客需要的基础文件拉下来，并初始化项目结构。
 
@@ -362,7 +399,6 @@ blog/
 > 首先还是建议检查网络和 Git 是否正常。<br>
 > 如果实在无法通过在线初始化，也可以使用我之前准备的文件： [Hexo-files.zip](/download/Hexo-files.zip)<br>
 > 解压后，将文件复制到博客文件夹中，再执行一次 `npm install` 安装依赖。<br>
-> ![](https://free.picui.cn/free/2025/06/28/685ec0922708a.png)<br>
 
 ### Step4：第一次本地运行
 
@@ -377,7 +413,7 @@ hexo g && hexo s
 - `hexo g`：`hexo generate` 的缩写，生成静态网页；
 - `hexo s`：`hexo server` 的缩写，开启本地预览服务器。
 
-![](https://free.picui.cn/free/2025/06/28/685ec1be5412c.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(11).png)
 
 正常情况下，终端会出现：
 
@@ -387,7 +423,7 @@ http://localhost:4000/
 
 按住 `Ctrl` 点击网址，或者直接复制到浏览器地址栏。
 
-![](https://free.picui.cn/free/2025/06/28/685ec204680d3.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(12).png)
 
 如果你已经看到 Hexo 默认的 Landscape 页面，那么恭喜你——到这里，其实你已经真正拥有了一个可以运行的网站。
 
@@ -403,6 +439,16 @@ Ctrl + C
 
 停止本地服务器。
 
+<div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:52px 0 38px;color:#49b1f5;">
+  <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#49b1f5);opacity:.4;"></div>
+  <span style="font-size:15px;">⬡</span>
+  <span style="font-size:12px;font-weight:700;letter-spacing:.12em;white-space:nowrap;">
+    04 · 部署到互联网
+  </span>
+  <span style="font-size:15px;">⬡</span>
+  <div style="flex:1;height:1px;background:linear-gradient(90deg,#49b1f5,transparent);opacity:.4;"></div>
+</div>
+
 # 部署到 GitHub Pages
 
 现在博客只能通过 `localhost:4000` 在自己电脑上访问。
@@ -417,7 +463,9 @@ Ctrl + C
 
 打开 GitHub，点击 `New repository`。<br>
 
-![](https://free.picui.cn/free/2025/06/28/685ec8dd4d9b9.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(13).png)
+
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(14).png)
 
 仓库名称建议严格写成：
 
@@ -437,7 +485,6 @@ BaiYB
 BaiYB.github.io
 ```
 
-![](https://free.picui.cn/free/2025/06/28/685ecb6200cf6.png)<br>
 
 这个命名不是为了好看，而是 GitHub Pages 的用户站点规则。
 
@@ -477,11 +524,11 @@ ssh-keygen -t rsa -C 你的GitHub邮箱
 C:\Users\你的用户名\.ssh\id_rsa.pub
 ```
 
-![](https://free.picui.cn/free/2025/06/28/685ece4a3aa3b.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(15).png)
 
 右键 `id_rsa.pub`，使用记事本打开，然后复制里面的**全部内容**。
 
-![](https://free.picui.cn/free/2025/06/28/685ecedd5f095.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(16).png)
 
 > 注意：<br>
 > `id_rsa` 是私钥，不要随便发给别人。<br>
@@ -501,7 +548,7 @@ C:\Users\你的用户名\.ssh\id_rsa.pub
 My Windows PC
 ```
 
-![](https://free.picui.cn/free/2025/06/28/685ed0afee442.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(17).png)
 
 ## Step5：测试电脑与 GitHub 的通信
 
@@ -531,7 +578,7 @@ yes
 
 如果最终出现类似“successfully authenticated”的提示，说明 SSH 这一层已经打通。
 
-![](https://free.picui.cn/free/2025/06/28/685ed1a3e3582.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(18).png)
 
 这里我很建议大家养成一个习惯：**每配置完一层，就先测试这一层。**
 
@@ -556,7 +603,7 @@ deploy:
 ```yml
 deploy:
   type: git
-  repo: git@github.com:BaiYB/BaiYB.github.io.git
+  repo: git@github.com:Bai-YB/Bai-YB.github.io.git
   branch: main
 ```
 
@@ -564,7 +611,7 @@ deploy:
 > `type`、`repo`、`branch` 前面的空格不要乱改，也不要使用 Tab 随便对齐。<br>
 > 如果 `_config.yml` 里本来已经存在 `deploy` 配置，建议直接修改原来的，不要在文件里重复写两个 `deploy:`。
 
-![](https://free.picui.cn/free/2025/06/28/685ed2f67ec06.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(19).png)
 
 ## Step7：安装部署插件
 
@@ -616,13 +663,21 @@ INFO  Deploy done: git
 https://你的GitHub用户名.github.io
 ```
 
-![](https://free.picui.cn/free/2025/06/28/685ed5a4144a0.png)<br>
-
 > 第一次部署可能不会立刻生效，可以稍等几分钟再刷新。
 
 当这个网址真的能被手机、其他电脑打开的时候，整个体验和本地 `localhost` 是完全不一样的。
 
 因为从这一刻开始，它不再只是你电脑上的一个项目，而是互联网上真正存在的一个网站了。
+
+<div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:52px 0 38px;color:#49b1f5;">
+  <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#49b1f5);opacity:.4;"></div>
+  <span style="font-size:15px;">⬡</span>
+  <span style="font-size:12px;font-weight:700;letter-spacing:.12em;white-space:nowrap;">
+    04 · Hexo美化
+  </span>
+  <span style="font-size:15px;">⬡</span>
+  <div style="flex:1;height:1px;background:linear-gradient(90deg,#49b1f5,transparent);opacity:.4;"></div>
+</div>
 
 # Hexo 主题配置
 
@@ -634,7 +689,7 @@ https://你的GitHub用户名.github.io
 
 Hexo 官方主题列表：[https://hexo.io/themes/](https://hexo.io/themes/)
 
-本文还是以 `Butterfly` 为例。
+本文还是以本站使用的 `Butterfly` 为例。
 
 一方面 Butterfly 本身功能比较完整，另一方面网上能找到的教程、魔改方案和现成案例都非常多。你以后想加首页大图、友链、音乐、评论、侧边栏、动态效果甚至自己写 CSS/JS，都有很大的发挥空间。
 
@@ -652,13 +707,12 @@ git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes
 themes/butterfly
 ```
 
-![](https://free.picui.cn/free/2025/06/28/685ed7f6154bd.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(20).png)
 
 > 如果这里出现 GitHub 连接超时，可以先检查网络。<br>
 > 也可以使用我之前保留的 Butterfly 压缩包：<br>
 > [Butterfly主题压缩包](/download/butterfly.zip)<br>
 > 解压到 `themes` 文件夹，并确保最终结构是 `themes/butterfly/`，不要多套一层目录。<br>
-> ![](https://free.picui.cn/free/2025/06/28/685ed9994f2a0.png)
 
 ## 切换主题
 
@@ -676,7 +730,7 @@ theme: landscape
 theme: butterfly
 ```
 
-![](https://free.picui.cn/free/2025/06/28/685eda437e477.png)<br>
+![image.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image(21).png)
 
 > 注意：YAML 中冒号后面的空格不要省略。
 
@@ -687,8 +741,6 @@ theme: butterfly
 ```bash
 npm install hexo-renderer-pug hexo-renderer-stylus --save
 ```
-
-![](https://free.picui.cn/free/2025/06/28/685edad0314ac.png)<br>
 
 如果缺少相关渲染器，主题很可能无法正常渲染页面。
 
@@ -706,7 +758,7 @@ hexo clean && hexo generate && hexo server
 http://localhost:4000/
 ```
 
-![](https://free.picui.cn/free/2025/06/28/685edc34911dd.png)<br>
+![d4fbf449a2a0e8ad972f8473f9f0aa28.png](https://img.baiyb.top/file/blog/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/d4fbf449a2a0e8ad972f8473f9f0aa28.png)
 
 如果此时已经看到 Butterfly 的页面，那么主题切换就成功了。
 
@@ -822,11 +874,7 @@ hexo deploy
 
 ```bash
 hexo new "文章标题"
-```
-
-缩写：
-
-```bash
+或
 hexo n "文章标题"
 ```
 
@@ -834,11 +882,7 @@ hexo n "文章标题"
 
 ```bash
 hexo clean
-```
-
 或：
-
-```bash
 hexo cl
 ```
 
@@ -846,11 +890,7 @@ hexo cl
 
 ```bash
 hexo generate
-```
-
-或：
-
-```bash
+或
 hexo g
 ```
 
@@ -858,11 +898,7 @@ hexo g
 
 ```bash
 hexo server
-```
-
-或：
-
-```bash
+或
 hexo s
 ```
 
@@ -870,11 +906,7 @@ hexo s
 
 ```bash
 hexo deploy
-```
-
-或：
-
-```bash
+或
 hexo d
 ```
 
@@ -1201,11 +1233,7 @@ AI 最有用的地方，不是代替你无脑复制命令，而是帮你快速�
 
 几年之后再打开自己的博客，你看到的可能早就不只是几十篇文章，而是一条非常清楚的成长轨迹：自己曾经对什么感兴趣、遇到过什么问题、做过哪些项目、认识了哪些人、又在什么时候突然改变了想法。
 
-我很喜欢个人博客的一点就是，它允许我们保留这些东西。
-
-不是为了流量，也不一定为了给谁看。
-
-有些文章可能根本没几个人点开，有些折腾最后甚至没有真正派上用场，但只要这个过程让自己学到了东西、留下了记忆，我觉得就已经足够了。
+我很喜欢个人博客的一点就是，它可以保留我们成长的轨迹。
 
 实践虽小，内涵极大。
 
