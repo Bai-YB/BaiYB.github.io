@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>如何使用 Codex 与 DSH：从安装到接入 GPT、DeepSeek | BaiYB的个人博客</title><meta name="author" content="BaiYB"><meta name="copyright" content="BaiYB"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="从 ChatGPT 注册到 Codex、DSH Desktop 安装，配合图文步骤，用 CC Switch 接入 GPT 与 DeepSeek，弄懂 API Key、模型切换和常见报错。少在配置页兜圈子，早点让 AI 开始干活。">
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Codex 和 DSH 的安装与模型配置 | BaiYB的个人博客</title><meta name="author" content="BaiYB"><meta name="copyright" content="BaiYB"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="Codex 和 DSH Desktop 的安装与模型配置教程，包含 ChatGPT 注册、CC Switch 使用，以及 GPT、DeepSeek 的 API 接入方法，附操作截图和常见问题。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何使用 Codex 与 DSH：从安装到接入 GPT、DeepSeek">
+<meta property="og:title" content="Codex 和 DSH 的安装与模型配置">
 <meta property="og:url" content="https://baiyb.top/2026/10/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/index.html">
 <meta property="og:site_name" content="BaiYB的个人博客">
-<meta property="og:description" content="从 ChatGPT 注册到 Codex、DSH Desktop 安装，配合图文步骤，用 CC Switch 接入 GPT 与 DeepSeek，弄懂 API Key、模型切换和常见报错。少在配置页兜圈子，早点让 AI 开始干活。">
+<meta property="og:description" content="Codex 和 DSH Desktop 的安装与模型配置教程，包含 ChatGPT 注册、CC Switch 使用，以及 GPT、DeepSeek 的 API 接入方法，附操作截图和常见问题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%282%29.png">
 <meta property="article:published_time" content="2026-10-20T08:00:00.000Z">
-<meta property="article:modified_time" content="2026-10-20T10:10:30.826Z">
+<meta property="article:modified_time" content="2026-10-20T10:23:36.261Z">
 <meta property="article:author" content="BaiYB">
 <meta property="article:tag" content="Codex">
 <meta property="article:tag" content="DSH">
@@ -17,11 +17,11 @@
 <meta name="twitter:image" content="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%282%29.png"><script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "如何使用 Codex 与 DSH：从安装到接入 GPT、DeepSeek",
+  "headline": "Codex 和 DSH 的安装与模型配置",
   "url": "https://baiyb.top/2026/10/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/",
   "image": "https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%282%29.png",
   "datePublished": "2026-10-20T08:00:00.000Z",
-  "dateModified": "2026-10-20T10:10:30.826Z",
+  "dateModified": "2026-10-20T10:23:36.261Z",
   "author": [
     {
       "@type": "Person",
@@ -158,420 +158,189 @@
   },
   autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '如何使用 Codex 与 DSH：从安装到接入 GPT、DeepSeek',
+  title: 'Codex 和 DSH 的安装与模型配置',
   isHighlightShrink: false,
   isToc: true,
   pageType: 'post'
 }</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/visitor-card.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss2.xml" title="BaiYB的个人博客" type="application/rss+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://img.baiyb.top/file/blog/1771123844150_微信图片_2026-02-15_103638_552.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://img.baiyb.top/file/blog/1771128027478_qqansv7wmrkglaycwaao7t0zf0zhdfg.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">BaiYB的个人博客</span></a><a class="nav-page-title" href="/"><span class="site-name">如何使用 Codex 与 DSH：从安装到接入 GPT、DeepSeek</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">如何使用 Codex 与 DSH：从安装到接入 GPT、DeepSeek</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-10-20T08:00:00.000Z" title="发表于 2026-10-20 16:00:00">2026-10-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-10-20T10:10:30.826Z" title="更新于 2026-10-20 18:10:30">2026-10-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/">实用教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">5.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>18分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>想让 AI 帮忙改代码、整理资料、处理文件，结果还没开始干活，先被账号、API Key、模型供应商绕晕了？</p>
-<p>别急，这些名字看着热闹，真正需要你操作的地方并不多。这篇文章就沿着我的实际配置过程，把 <strong>ChatGPT 注册、Codex 安装、CC Switch 配置，以及 DSH Desktop 接入模型</strong> 串起来。能点按钮解决的地方，咱们就先不和命令行较劲。</p>
-<blockquote>
-<p>📌 <strong>开工前看一眼</strong></p>
-<ul>
-<li>注册 ChatGPT、访问 OpenAI 官方登录页前，请先确认自己能够正常访问相关网站。</li>
-<li>只想使用 DSH + DeepSeek，可以直接跳到 DSH 部分，不必先把前面的账号都注册一遍。</li>
-<li>本文截图来自 2026 年 10 月的界面。按钮位置可能会变，认准名称即可；赠金、分组倍率与可用模型以你操作当天的页面为准。</li>
-</ul>
-</blockquote>
-<h2 id="先认人：Codex、DSH、CC-Switch-分别干什么？"><a href="#先认人：Codex、DSH、CC-Switch-分别干什么？" class="headerlink" title="先认人：Codex、DSH、CC Switch 分别干什么？"></a>先认人：Codex、DSH、CC Switch 分别干什么？</h2><p><strong>Codex</strong> 是 OpenAI 的智能体工具，可以结合项目和本地文件处理任务，例如阅读代码、修改文件、运行检查。本文主要使用它的桌面界面，不要求你先学会终端命令。</p>
-<p><strong>DSH</strong> 是 <strong>DeepSeek Harness</strong> 的简称，同样可以围绕工作区处理任务。本文选用的是社区维护的 <strong>DSH Desktop</strong>，它把 DSH 做成了方便下载安装的图形客户端，支持配置模型和扩展插件。项目介绍可以查看 <a target="_blank" rel="noopener" href="https://www.dshdesktop.cn/">DSH Desktop 网站</a> 和 <a target="_blank" rel="noopener" href="https://github.com/anywhere-labs/dsh-desktop">项目仓库</a>。</p>
-<p><strong>CC Switch</strong> 则负责管理 Codex 等工具的模型连接配置。你可以给 Codex 准备一套 GPT 配置，再准备一套 DeepSeek 配置，需要哪个就切过去。</p>
-<p>记住这一点，后面会轻松很多：<strong>客户端负责让你操作，模型负责处理请求，API Key 是调用模型的凭证。</strong></p>
-<p>围绕这两款客户端，本文会演示下面几种常用搭配：</p>
-<table>
-<thead>
-<tr>
-<th>你想用什么</th>
-<th>配置路线</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Codex + GPT 系列模型</td>
-<td>安装 Codex → 获取中转站 Key → 用 CC Switch 导入</td>
-</tr>
-<tr>
-<td>Codex + DeepSeek</td>
-<td>安装 Codex → 获取 DeepSeek 官方 Key → 在 CC Switch 选择预设</td>
-</tr>
-<tr>
-<td>DSH + DeepSeek</td>
-<td>安装 DSH Desktop → 使用客户端提供的 DeepSeek 登录或 Key 入口</td>
-</tr>
-<tr>
-<td>DSH + GPT 系列模型</td>
-<td>安装 DSH Desktop → 在模型设置中添加中转站</td>
-</tr>
-</tbody></table>
-<p>**不用四条路线全部做一遍。**先选自己最想用的一条，跑通之后再折腾其他的。</p>
-<p><strong>按需跳转：</strong><a href="#chatgpt">注册 ChatGPT</a> · <a href="#codex">下载 Codex</a> · <a href="#relay">准备中转站 Key</a> · <a href="#ccswitch">配置 CC Switch</a> · <a href="#dsh">安装 DSH</a> · <a href="#dsh-gpt">DSH 接入 GPT</a> · <a href="#troubleshooting">常见问题</a></p>
-<hr>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://img.baiyb.top/file/blog/1771123844150_微信图片_2026-02-15_103638_552.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://img.baiyb.top/file/blog/1771128027478_qqansv7wmrkglaycwaao7t0zf0zhdfg.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">BaiYB的个人博客</span></a><a class="nav-page-title" href="/"><span class="site-name">Codex 和 DSH 的安装与模型配置</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Codex 和 DSH 的安装与模型配置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-10-20T08:00:00.000Z" title="发表于 2026-10-20 16:00:00">2026-10-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-10-20T10:23:36.261Z" title="更新于 2026-10-20 18:23:36">2026-10-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/">实用教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">3.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>这篇整理一下 Codex 和 DSH Desktop 的安装，以及接入 GPT、DeepSeek 的方法。截图以 Windows 为主，Mac 用户也可以参考，模型配置部分基本相同。</p>
+<p>Codex 可以读取项目文件、修改代码、运行命令，也能处理一些文档和文件整理工作。DSH 是 DeepSeek Harness 的简称，本文使用的 DSH Desktop 是基于它开发的社区桌面客户端，同样可以围绕本地工作区完成任务。</p>
+<p>两款软件都能配置模型来源。下面会用到 CC Switch，主要是为了管理 Codex 的配置；DSH 则直接在自己的设置里添加模型。</p>
+<p>注册和登录 ChatGPT 前，需要先确认能够正常访问官网。如果只准备使用 DSH，可以直接看<a href="#dsh">后面的安装部分</a>。使用 API 的方式配置 Codex，也可以先跳过 ChatGPT 注册。</p>
+<p>文中截图来自 2026 年 10 月。软件界面、模型列表和站内活动后续可能调整，遇到不同的地方，以当时的页面说明为准。</p>
 <p><a id="chatgpt"></a></p>
-<h2 id="一、注册-ChatGPT：先把账号准备好"><a href="#一、注册-ChatGPT：先把账号准备好" class="headerlink" title="一、注册 ChatGPT：先把账号准备好"></a>一、注册 ChatGPT：先把账号准备好</h2><p>已经有 ChatGPT 账号的朋友，可以跳过这一节。</p>
-<h3 id="1-打开官网，点击免费注册"><a href="#1-打开官网，点击免费注册" class="headerlink" title="1. 打开官网，点击免费注册"></a>1. 打开官网，点击免费注册</h3><p>访问 <a target="_blank" rel="noopener" href="https://chatgpt.com/">ChatGPT 官网</a>，点击右上角的 <strong>免费注册</strong>。</p>
+<h2 id="注册-ChatGPT"><a href="#注册-ChatGPT" class="headerlink" title="注册 ChatGPT"></a>注册 ChatGPT</h2><p>打开 <a target="_blank" rel="noopener" href="https://chatgpt.com/">ChatGPT 官网</a>，点击右上角的“免费注册”。已有账号直接登录即可。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image.png" alt="ChatGPT 首页：右上角的免费注册入口"></p>
-<p>在注册窗口里，选择自己方便的方式。页面可能提供邮箱、Google、Apple 等选项，具体以实际显示为准。</p>
-<p>这里我用 <strong>邮箱注册</strong> 演示，准备一个能正常收邮件的邮箱就好。</p>
+<p>页面提供了邮箱、Google、Apple 等注册方式，这里用邮箱演示。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%281%29.png" alt="ChatGPT 注册窗口：选择邮箱或页面提供的其他方式"></p>
-<h3 id="2-按提示完成验证"><a href="#2-按提示完成验证" class="headerlink" title="2. 按提示完成验证"></a>2. 按提示完成验证</h3><p>输入邮箱后，跟随页面完成验证和账号资料填写。如果要求设置密码，就设置一个单独使用的密码；如果收到验证码，就回邮箱查收。</p>
-<p>完成后，进入自己的账号界面：</p>
+<p>输入邮箱后，按提示完成验证和资料填写。如果需要设置密码，就在这一步设置；验证码到邮箱里查收。</p>
+<p>注册完成后就可以进入自己的账号：</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/ef75d1afa4a70c1c6ecfc9017cc19e84.png" alt="ChatGPT 注册完成后的账号界面"></p>
-<blockquote>
-<p>💡 <strong>记住你是怎么登录的。</strong></p>
-<p>如果注册时选择了 Google，后面也优先通过 Google 登录。隔几天再回来，别一顿操作给自己“喜提第二个账号”。</p>
-</blockquote>
-<p>网页版适合日常聊天。如果你希望 AI 结合电脑上的项目、文件继续工作，接下来就可以安装桌面客户端。</p>
-<p>不同客户端的表现还会受到模型、上下文和功能设置影响。**换个客户端，并不能保证回答质量自动升级。**我们这里选择桌面端，主要是为了更方便地处理实际任务。</p>
+<p>之后登录时沿用原来的方式就好，例如用 Google 注册的账号，仍然选择 Google 登录。</p>
 <p><a id="codex"></a></p>
-<h2 id="二、下载-Codex：Mac-和-Windows-分开看"><a href="#二、下载-Codex：Mac-和-Windows-分开看" class="headerlink" title="二、下载 Codex：Mac 和 Windows 分开看"></a>二、下载 Codex：Mac 和 Windows 分开看</h2><p>打开 <a target="_blank" rel="noopener" href="https://openai.com/zh-Hans-CN/codex/">Codex 官方介绍页</a>，从页面进入适合自己系统的下载入口。</p>
+<h2 id="安装-Codex"><a href="#安装-Codex" class="headerlink" title="安装 Codex"></a>安装 Codex</h2><p>访问 <a target="_blank" rel="noopener" href="https://openai.com/zh-Hans-CN/codex/">Codex 官网</a>，选择对应系统的下载入口。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%282%29.png" alt="Codex 官方页面及桌面客户端下载入口"></p>
-<blockquote>
-<p><strong>关于名字的小变化</strong></p>
-<p>本文沿用大家熟悉的“Codex 桌面端”说法。当前 <a target="_blank" rel="noopener" href="https://learn.chatgpt.com/docs/quickstart">OpenAI 官方快速开始</a> 将桌面入口称为 ChatGPT 桌面应用，并说明可以在其中进入 Codex 模式。因此，看到 ChatGPT 名称也别急着怀疑自己下错了，先检查是否来自官方入口、应用里能否进入 Codex。</p>
-</blockquote>
-<h3 id="Mac-用户"><a href="#Mac-用户" class="headerlink" title="Mac 用户"></a>Mac 用户</h3><p>按官网提供的方式下载。拿到 <code>.dmg</code> 安装包后，打开并按照提示安装；如果需要选择芯片架构，注意区分 Apple Silicon 和 Intel。</p>
-<h3 id="Windows-用户"><a href="#Windows-用户" class="headerlink" title="Windows 用户"></a>Windows 用户</h3><p>本文截图中的 Windows 下载流程会进入 <strong>Microsoft Store &#x2F; 微软应用商店</strong>。官网给你的下载入口或小型安装程序，也可能继续调用商店完成安装。</p>
-<p>到下面这个页面后，点击 <strong>下载 &#x2F; 安装 &#x2F; 获取</strong>，等待安装结束即可。截图里因为已经装好，所以按钮显示为“打开”。</p>
+<p>现在官网下载的桌面应用可能显示为“ChatGPT”，安装后可以在应用内选择 Codex。下图的微软商店页面也是这个名称。</p>
+<p><strong>Mac 用户</strong>下载对应安装包后，按提示安装即可。如果页面要求选择芯片类型，注意区分 Apple Silicon 和 Intel。</p>
+<p><strong>Windows 用户</strong>会进入微软应用商店。点击“获取”或“安装”，等待下载完成。我的电脑已经安装过了，所以截图里显示的是“打开”。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%284%29.png" alt="Windows 下载或安装窗口：按提示完成安装"></p>
-<p>如果商店打不开、下载一直转圈，可以先检查系统网络、商店登录状态和地区设置。<strong>如果你正使用代理，也可以尝试让微软商店直连后重试</strong>；这是一条排查办法，不代表所有网络环境都必须关闭代理。</p>
-<h3 id="第一次打开，先认识两个登录入口"><a href="#第一次打开，先认识两个登录入口" class="headerlink" title="第一次打开，先认识两个登录入口"></a>第一次打开，先认识两个登录入口</h3><p>安装完成后打开应用，可以看到：</p>
+<p>商店如果一直打不开或下载不动，可以检查网络和代理设置，尝试让微软商店直连后再下载。</p>
+<p>安装好后打开应用，会看到两个登录入口：</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%285%29.png" alt="桌面客户端首次打开：继续登录与使用其他方式登录"></p>
-<table>
-<thead>
-<tr>
-<th>入口</th>
-<th>怎么理解</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>继续登录</strong></td>
-<td>使用 ChatGPT 账号完成官方登录，后续可用功能与额度取决于账号情况</td>
-</tr>
-<tr>
-<td><strong>使用其他方式登录</strong></td>
-<td>进入 API Key 等其他认证入口；本文接下来主要配置 API 模型来源</td>
-</tr>
-</tbody></table>
-<p>这里不需要急着往输入框里粘东西。<strong>先把 API Key 和供应商配置准备好，再回来完成对应入口。</strong></p>
-<p>如果你的账号被要求进行额外验证，请按官方页面提示处理；不能把某个账号遇到的手机号验证，当成所有账号都必经的一步。<a target="_blank" rel="noopener" href="https://learn.chatgpt.com/docs/auth">官方登录方式说明</a></p>
+<p>“继续登录”使用的是 ChatGPT 账号；“使用其他方式登录”可以进入 API Key 等认证方式。本文主要介绍 API 接入，先把下面的 Key 和配置准备好，再回来继续。</p>
+<p>使用 ChatGPT 账号登录时，如果页面要求额外验证，按实际提示处理即可，并非所有账号都会遇到同样的验证步骤。</p>
 <p><a id="relay"></a></p>
-<h2 id="三、准备模型来源：中转站和官方-API-都可以"><a href="#三、准备模型来源：中转站和官方-API-都可以" class="headerlink" title="三、准备模型来源：中转站和官方 API 都可以"></a>三、准备模型来源：中转站和官方 API 都可以</h2><p>给客户端接入模型时，最常用到三样东西：</p>
+<h2 id="获取中转站-API-Key"><a href="#获取中转站-API-Key" class="headerlink" title="获取中转站 API Key"></a>获取中转站 API Key</h2><p>接入模型需要 API 地址、API Key 和模型名称。地址决定请求发往哪里，Key 用于验证调用权限，模型名称则指定这次使用哪个模型。</p>
+<p>本文用我自己的中转站<a target="_blank" rel="noopener" href="https://api.baiyb.top/">汇枢Flow</a>演示 GPT 接入。想直接使用模型厂商的 API 也可以，后面会介绍 DeepSeek 官方平台的配置方式。</p>
+<p>注册后可以微信联系我，领取 <strong>5 美元测试额度</strong>。活动是否还在进行，联系时和我确认一下就行，doge。</p>
+<p>打开站点，点击“开始使用”，跟着页面注册并登录。</p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%287%29.png" alt="汇枢Flow 首页：点击开始使用进入注册或登录"></p>
+<p>进入控制台后，在左侧找到“API 密钥”。你看到的菜单可能比截图少一些，不影响后面的操作。</p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%286%29.png" alt="中转站控制台：进入 API 密钥页面"></p>
+<p>点击右上角的“创建 API 密钥”，填好名称，再选择分组。</p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%288%29.png" alt="创建中转站 API 密钥：填写名称并选择分组"></p>
+<p>名称方便自己区分就行，例如 <code>Codex</code> 或 <code>DSH</code>。分组需要和准备使用的模型对应，本文接入 GPT，就选择 Codex 分组。</p>
+<p>截图中的 <code>codex_nx</code> 是 <strong>0.22x</strong>，<code>codex_限时特价</code> 是 <strong>0.1x</strong>。0.1x 属于限时福利，平时不一定开放，日常使用可以选择 0.22x。不同分组的说明和倍率都在站内，创建前看一下当前信息。</p>
+<p>按需要设置额度和有效期，点击“保存更改”，然后复制完整的 Key。这里要复制的是“API 密钥”页面创建的模型调用 Key，不是个人设置里的账户管理令牌。</p>
+<p>Key 不要公开分享，它可以消耗你账号里的额度。另外，中转站、DeepSeek 官方平台和 ChatGPT 订阅分别计费，余额不互通。</p>
+<p><a id="ccswitch"></a></p>
+<h2 id="用-CC-Switch-配置-Codex"><a href="#用-CC-Switch-配置-Codex" class="headerlink" title="用 CC Switch 配置 Codex"></a>用 CC Switch 配置 Codex</h2><p>打开 <a target="_blank" rel="noopener" href="https://ccswitch.io/zh/">CC Switch 官网</a>，下载对应系统的版本。</p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%289%29.png" alt="CC Switch 下载页：按自己的系统选择安装包"></p>
+<p>Windows 可以选择 <code>.msi</code> 安装包；如果下载的是便携版，需要先解压再运行。Mac 按下载页的说明安装即可。在 GitHub 下载时，认准 <a target="_blank" rel="noopener" href="https://github.com/farion1231/cc-switch">farion1231&#x2F;cc-switch</a> 项目。</p>
+<p>打开 CC Switch，左侧是它支持管理的应用。选择 Codex，点击右上角的“添加供应商”。</p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%2810%29.png" alt="CC Switch 主界面：选择 Codex 后添加供应商"></p>
+<p>添加页里有各家厂商的预设。接入 DeepSeek 可以直接选预设；接入中转站，可以用自定义配置，或者从站内导入。</p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%2811%29.png" alt="供应商选择页：自定义配置与模型厂商预设"></p>
+<p>下面两种方式按需要选一个就行。</p>
+<h3 id="接入-DeepSeek"><a href="#接入-DeepSeek" class="headerlink" title="接入 DeepSeek"></a>接入 DeepSeek</h3><p>在“模型厂商”中选择 DeepSeek，进入配置页。</p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%2812%29.png" alt="Codex 的 DeepSeek 预设：API Key、请求地址与模型列表"></p>
+<p>点击“获取 API Key”，会打开 <a target="_blank" rel="noopener" href="https://platform.deepseek.com/">DeepSeek 官方开放平台</a>。登录后进入“API keys”，点击“创建 API key”。</p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%2813%29.png" alt="DeepSeek 官方开放平台：API keys 列表和创建入口"></p>
+<p>创建后复制完整密钥并保存。DeepSeek 的完整 Key 只在创建时显示，之后无法再次查看，丢失的话需要重新创建。</p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/1792487045239_image.png" alt="DeepSeek 创建 API Key 后的保存提示"></p>
+<p>回到 CC Switch，把 Key 填入“API Key”一栏。请求地址保留预设值，再点击“获取模型列表”，选好要使用的模型，点击“添加”。如果预设已经填好了模型，核对后保留即可。</p>
+<p>调用前确认 DeepSeek 账号有可用余额，没有的话再按需要充值。模型名称以当前平台和预设为准，不必照着旧截图填写。</p>
+<p>如果添加后的卡片提示“需要路由”，还要进入 Codex 的“路由”页面，启动本地路由并选择这个供应商；没有该提示的原生直连配置，正常启用即可。</p>
+<h3 id="接入-GPT"><a href="#接入-GPT" class="headerlink" title="接入 GPT"></a>接入 GPT</h3><p>回到中转站的“API 密钥”页面，找到刚创建的 Key，点击那一行右侧的三个点，选择“CC Switch”。</p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/1792487417351_image.png" alt="中转站密钥操作菜单：选择 CC Switch 导入"></p>
+<p>在弹出的窗口里选择 Codex，名称可以自行修改。主模型选择 <code>gpt-6.1-sol</code>，然后点击“打开 CC Switch”。浏览器询问是否打开应用时，允许打开，再到 CC Switch 里确认导入。</p>
+<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/1792487411174_image.png" alt="一键导入窗口：选择 Codex 和主模型"></p>
+<p>如果没有找到这个模型，先检查 Key 选择的分组，或查看站内当前可用模型。</p>
+<p>没有一键导入入口时，也可以在 CC Switch 的 Codex 页面添加“自定义配置”，填写下面这些信息：</p>
 <table>
 <thead>
 <tr>
 <th>配置项</th>
-<th>是什么</th>
-<th>例子</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>API 地址</td>
-<td>请求发到哪里</td>
-<td><code>https://api.baiyb.top/v1</code></td>
-</tr>
-<tr>
-<td>API Key</td>
-<td>用什么凭证调用</td>
-<td>从你自己的平台账号创建并复制</td>
-</tr>
-<tr>
-<td>模型 ID</td>
-<td>具体调用哪个模型</td>
-<td><code>gpt-6.1-sol</code>，前提是对应平台确实开放了它</td>
-</tr>
-</tbody></table>
-<p>本文会演示两种来源：<strong>我的中转站</strong>，以及 <strong>DeepSeek 官方开放平台</strong>。</p>
-<p>中转站提供统一的模型接入入口；选择中转站后，模型请求会经过它，费用也按对应站点规则计算。你也可以直接使用支持的模型厂商 API。</p>
-<blockquote>
-<p>**先把账本分开：**ChatGPT 订阅、中转站余额、DeepSeek 官方余额是三回事。给其中一个充值，另外两个的余额不会跟着增加。</p>
-</blockquote>
-<h3 id="1-注册中转站账号"><a href="#1-注册中转站账号" class="headerlink" title="1. 注册中转站账号"></a>1. 注册中转站账号</h3><p>这里介绍一下我自己的站点：<a target="_blank" rel="noopener" href="https://api.baiyb.top/">汇枢Flow</a>。本文的 GPT 系列模型接入就以它为例，分组和价格都可以在站内查看。</p>
-<blockquote>
-<p>🎁 <strong>给读者留个体验入口</strong></p>
-<p>注册后可以微信联系我，领取 <strong>5 美元测试额度</strong>。具体领取条件和活动是否仍在进行，以我当时确认的信息为准。先跑通、体验一下，再决定后续怎么用，doge。</p>
-</blockquote>
-<p>打开网站，点击 <strong>开始使用</strong>，按页面提示注册并登录。</p>
-<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%287%29.png" alt="汇枢Flow 首页：点击开始使用进入注册或登录"></p>
-<h3 id="2-创建自己的-API-Key"><a href="#2-创建自己的-API-Key" class="headerlink" title="2. 创建自己的 API Key"></a>2. 创建自己的 API Key</h3><p>进入控制台后，点击左侧的 <strong>API 密钥</strong>。有些版本会把它叫作“令牌管理”，意思相近。</p>
-<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%286%29.png" alt="中转站控制台：进入 API 密钥页面"></p>
-<p>点击右上角的 <strong>创建 API 密钥</strong>，进入下面的表单：</p>
-<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%288%29.png" alt="创建中转站 API 密钥：填写名称并选择分组"></p>
-<p>可以这样填：</p>
-<ol>
-<li><strong>名称</strong>：起一个自己看得懂的名字，例如 <code>Codex-电脑</code> 或 <code>DSH-日常使用</code>。</li>
-<li><strong>分组</strong>：按准备调用的模型选择。使用 GPT &#x2F; Codex 路线时，选择站内对应的 Codex 分组。</li>
-<li><strong>额度与有效期</strong>：按自己的需要设置，并确认令牌没有过期、没有把目标模型限制掉。</li>
-<li>点击 <strong>保存更改</strong>，然后复制创建好的完整 Key。</li>
-</ol>
-<p>截图里，<code>codex_nx</code> 显示为 <strong>0.22x</strong>；<code>codex_限时特价</code> 显示为 <strong>0.1x</strong>。后者是限时福利分组，不保证一直开放。按本文截图操作时，可以优先考虑 <code>codex_nx</code>；实际选择前，还是看一眼当前分组说明和模型价格。</p>
-<p>倍率也不等于每次请求的固定费用，最终消费以站内计价和账单为准。</p>
-<blockquote>
-<p>🔑 <strong>API Key 当成“能花余额的钥匙”保管。</strong></p>
-<p>不要发进群聊、放进公开仓库，也别让它原样出现在教程截图里。需要的是“模型调用 Key”，不要误拿个人设置中的账户管理令牌。两个都叫令牌，但岗位不同。</p>
-</blockquote>
-<p>拿到 Key 后先放好，下一步请 CC Switch 出场。</p>
-<p><a id="ccswitch"></a></p>
-<h2 id="四、安装-CC-Switch，让-Codex-换模型更方便"><a href="#四、安装-CC-Switch，让-Codex-换模型更方便" class="headerlink" title="四、安装 CC Switch，让 Codex 换模型更方便"></a>四、安装 CC Switch，让 Codex 换模型更方便</h2><h3 id="1-下载并安装"><a href="#1-下载并安装" class="headerlink" title="1. 下载并安装"></a>1. 下载并安装</h3><p>打开 <a target="_blank" rel="noopener" href="https://ccswitch.io/zh/">CC Switch 项目官网</a>，选择对应系统的版本。</p>
-<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%289%29.png" alt="CC Switch 下载页：按自己的系统选择安装包"></p>
-<ul>
-<li><strong>Windows</strong>：通常选择 <code>.msi</code> 安装包；便携版先完整解压，再运行程序。</li>
-<li><strong>Mac</strong>：按页面提供的安装方式操作，并留意芯片架构说明。</li>
-<li>在 GitHub 下载时，请认准 <a target="_blank" rel="noopener" href="https://github.com/farion1231/cc-switch">farion1231&#x2F;cc-switch</a>，不要把源码压缩包当安装包。</li>
-</ul>
-<h3 id="2-认准-Codex，添加供应商"><a href="#2-认准-Codex，添加供应商" class="headerlink" title="2. 认准 Codex，添加供应商"></a>2. 认准 Codex，添加供应商</h3><p>打开 CC Switch 后，左侧这一列是它支持管理的不同工具。本文先点击 <strong>Codex</strong>，再点击 <strong>添加供应商</strong>。</p>
-<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%2810%29.png" alt="CC Switch 主界面：选择 Codex 后添加供应商"></p>
-<p>这里最容易点错的地方，就是还停在 Claude Code 页面，却给它添加了一套原本打算交给 Codex 的配置。先看一眼应用名称，省得配完才发现走错片场。</p>
-<p>在添加页中，你会看到很多供应商预设：</p>
-<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%2811%29.png" alt="供应商选择页：自定义配置与模型厂商预设"></p>
-<p><strong>有厂商预设就优先用预设；接入自己的中转地址时，再用自定义配置或站内导入。</strong></p>
-<p>下面两种路线按需选择，不需要都完成。</p>
-<h3 id="路线-A：给-Codex-接入-DeepSeek-官方-API"><a href="#路线-A：给-Codex-接入-DeepSeek-官方-API" class="headerlink" title="路线 A：给 Codex 接入 DeepSeek 官方 API"></a>路线 A：给 Codex 接入 DeepSeek 官方 API</h3><h4 id="第一步：选择-DeepSeek-预设"><a href="#第一步：选择-DeepSeek-预设" class="headerlink" title="第一步：选择 DeepSeek 预设"></a>第一步：选择 DeepSeek 预设</h4><p>在“模型厂商”中选择 <strong>DeepSeek</strong>，进入配置页。</p>
-<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%2812%29.png" alt="Codex 的 DeepSeek 预设：API Key、请求地址与模型列表"></p>
-<p>预设通常会准备好 API 地址和相关配置。点击右侧的 <strong>获取 API Key</strong>，进入 <a target="_blank" rel="noopener" href="https://platform.deepseek.com/">DeepSeek 官方开放平台</a>。</p>
-<h4 id="第二步：在官方平台创建-Key"><a href="#第二步：在官方平台创建-Key" class="headerlink" title="第二步：在官方平台创建 Key"></a>第二步：在官方平台创建 Key</h4><p>登录后进入 <strong>API keys</strong> 页面，点击 <strong>创建 API key</strong>。同时确认账号有可用余额；如果没有赠金或余额，再按需要充值。</p>
-<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%2813%29.png" alt="DeepSeek 官方开放平台：API keys 列表和创建入口"></p>
-<p>创建完成后，立即复制并妥善保存完整 Key。页面也提示了：<strong>完整密钥只在创建时显示，关闭后不能指望它再出来跟你打招呼。</strong></p>
-<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/1792487045239_image.png" alt="DeepSeek 创建 API Key 后的保存提示"></p>
-<h4 id="第三步：回到-CC-Switch-保存"><a href="#第三步：回到-CC-Switch-保存" class="headerlink" title="第三步：回到 CC Switch 保存"></a>第三步：回到 CC Switch 保存</h4><ol>
-<li>把刚才的 Key 粘贴到 <strong>API Key</strong> 输入框。</li>
-<li>保留 DeepSeek 预设的 API 地址与协议设置。</li>
-<li>查看模型列表，点击 <strong>获取模型列表</strong> 并选择要用的模型；如果预设已经有模型项，核对后保留即可。至少确认有一个可用模型。</li>
-<li>点击右下角的 <strong>添加</strong>。</li>
-</ol>
-<p>模型名称可能更新，不必死抄旧截图。以当前预设和 <a target="_blank" rel="noopener" href="https://api-docs.deepseek.com/zh-cn/">DeepSeek 官方 API 文档</a> 为准。</p>
-<p>如果供应商卡片显示 <strong>需要路由</strong>，还要在 Codex 的“路由”页面启动本地路由，并将请求路由到该供应商。普通原生直连预设则按它的默认方式使用。<strong>跟随当前预设，不要为了“看起来更高级”把每个开关都打开。</strong></p>
-<h3 id="路线-B：通过中转站给-Codex-接入-GPT"><a href="#路线-B：通过中转站给-Codex-接入-GPT" class="headerlink" title="路线 B：通过中转站给 Codex 接入 GPT"></a>路线 B：通过中转站给 Codex 接入 GPT</h3><h4 id="第一步：在密钥菜单中选择-CC-Switch"><a href="#第一步：在密钥菜单中选择-CC-Switch" class="headerlink" title="第一步：在密钥菜单中选择 CC Switch"></a>第一步：在密钥菜单中选择 CC Switch</h4><p>回到中转站的 <strong>API 密钥</strong> 页面，找到刚才创建、分组也选对的那一行，点击右侧的 <strong>三个点</strong>，选择 <strong>CC Switch</strong>。</p>
-<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/1792487417351_image.png" alt="中转站密钥操作菜单：选择 CC Switch 导入"></p>
-<p>注意，这里选择的是 <strong>API Key 对应行的菜单</strong>，不是去管理后台添加“上游渠道”。普通用户用自己的 Key 配客户端即可。</p>
-<h4 id="第二步：选择-Codex-和主模型"><a href="#第二步：选择-Codex-和主模型" class="headerlink" title="第二步：选择 Codex 和主模型"></a>第二步：选择 Codex 和主模型</h4><p>在弹出的导入窗口中：</p>
-<ol>
-<li>应用选择 <strong>Codex</strong>。</li>
-<li>填写一个容易识别的配置名称，例如 <code>汇枢Flow-GPT</code>。</li>
-<li>主模型选择 <strong><code>gpt-6.1-sol</code></strong>。</li>
-<li>点击 <strong>打开 CC Switch</strong>，按浏览器提示打开应用，并在应用内确认导入。</li>
-</ol>
-<p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/1792487411174_image.png" alt="一键导入窗口：选择 Codex 和主模型"></p>
-<p>如果列表里没有 <code>gpt-6.1-sol</code>，先检查令牌分组和当前可用模型，或联系站点确认。教程里写了它，不代表所有分组都会自动拥有它。</p>
-<p>**没有一键导入菜单怎么办？**在 CC Switch 里选择 Codex → 添加供应商 → 自定义配置，手动填写对应信息即可：</p>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>本站 GPT 接入示例</th>
+<th>内容</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>名称</td>
-<td><code>汇枢Flow-GPT</code>，可自行命名</td>
+<td>自行填写，例如 <code>汇枢Flow</code></td>
 </tr>
 <tr>
 <td>API 请求地址</td>
-<td><code>https://api.baiyb.top/v1</code>，如站内给出专用地址则按站内说明</td>
+<td><code>https://api.baiyb.top/v1</code></td>
 </tr>
 <tr>
 <td>API Key</td>
-<td>自己在本站创建的模型 Key</td>
+<td>在中转站创建的模型 Key</td>
 </tr>
 <tr>
 <td>模型</td>
-<td><code>gpt-6.1-sol</code>，需要该令牌确实有调用权限</td>
+<td><code>gpt-6.1-sol</code></td>
 </tr>
 <tr>
 <td>上游格式</td>
-<td><code>Responses（原生）</code>，适用于本站对应的 Responses 线路</td>
+<td><code>Responses（原生）</code></td>
 </tr>
 </tbody></table>
-<h4 id="第三步：启用配置，完全退出再重开"><a href="#第三步：启用配置，完全退出再重开" class="headerlink" title="第三步：启用配置，完全退出再重开"></a>第三步：启用配置，完全退出再重开</h4><p>导入完成后，回到 CC Switch 的 Codex 页面，找到对应供应商卡片，点击 <strong>启用 &#x2F; 切换</strong>。截图中的入口是卡片右侧的三角形按钮，启用后会显示 <strong>使用中</strong>。</p>
+<p>这组配置适用于本文演示的 GPT Responses 线路，其他模型或专用线路按站内说明填写。</p>
+<p>添加完成后，在供应商列表点击对应卡片右侧的三角形按钮。出现“使用中”，表示已经切换到这个配置。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%2814%29.png" alt="CC Switch 中切换 Codex 使用的模型供应商"></p>
-<blockquote>
-<p>⚠️ <strong>这一条值得单独记住：切完供应商，完全退出 Codex，再重新打开。</strong></p>
-<ul>
-<li><strong>Mac</strong>：使用应用菜单退出，或按 <code>Command + Q</code>。</li>
-<li><strong>Windows</strong>：关闭窗口后，如果托盘里还有应用图标，再右键选择退出；没有托盘图标时，通过应用菜单完成退出即可。</li>
-</ul>
-<p>“把窗口关了”和“程序已经退出”，有时候真是两码事。模型列表没更新时，先别急着和 Key 较劲。</p>
-</blockquote>
-<h3 id="3-回到-Codex，完成登录并测试"><a href="#3-回到-Codex，完成登录并测试" class="headerlink" title="3. 回到 Codex，完成登录并测试"></a>3. 回到 Codex，完成登录并测试</h3><p>供应商启用后重新打开桌面客户端，让它读取新的配置。如果仍停在登录页，先确认 CC Switch 中该供应商处于“使用中”、客户端也确实已经重启，再通过 <strong>使用其他方式登录</strong> 按当前版本提示继续。API 地址和模型配置以刚启用的供应商为准，进入主界面后确认选择了 <strong>Codex</strong> 模式。</p>
+<p>**切换后需要完全退出 Codex，再重新打开。**Mac 可以按 <code>Command + Q</code>；Windows 关闭窗口后，如果托盘里还有图标，再右键选择退出，也可以从应用菜单退出。</p>
+<p>重新打开后，客户端会读取新的供应商配置。如果仍显示登录页，先确认 CC Switch 中该供应商已经启用、客户端也已完全重启，再通过“使用其他方式登录”按页面提示继续。进入主界面后选择 Codex。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%2815%29.png" alt="完成配置后的桌面客户端工作界面"></p>
-<p>如果你希望同时保留官方账号身份和依赖它的功能，可以查看 CC Switch 设置中的 <strong>Codex 应用增强 → 直连切换时保留官方登录</strong>。不同版本的入口位置略有变化。仅使用本地 API 工作流时，不必为了接入中转站特意折腾这个选项。</p>
-<p><strong>验证时做两件事：</strong></p>
-<ol>
-<li>在新聊天里发送一句简单的问题，确认模型正常返回。</li>
-<li>打开对应平台的使用日志，检查刚才的调用时间和模型是否对应。</li>
-</ol>
-<p>只看客户端显示的账号名称，不能判断费用到底记在哪边。中转站配置就看中转站日志，DeepSeek 官方配置就看官方用量。</p>
-<p>到这里，Codex 这条路线就配好了。下面换 DSH Desktop——它的模型配置入口在客户端里面，步骤会更集中。</p>
-<hr>
+<p>以后切换到 DeepSeek 或其他已保存的供应商，操作也是一样：在 CC Switch 中启用对应配置，然后重启客户端。</p>
 <p><a id="dsh"></a></p>
-<h2 id="五、安装-DSH-Desktop：先用-DeepSeek-跑起来"><a href="#五、安装-DSH-Desktop：先用-DeepSeek-跑起来" class="headerlink" title="五、安装 DSH Desktop：先用 DeepSeek 跑起来"></a>五、安装 DSH Desktop：先用 DeepSeek 跑起来</h2><h3 id="1-下载并完成首次引导"><a href="#1-下载并完成首次引导" class="headerlink" title="1. 下载并完成首次引导"></a>1. 下载并完成首次引导</h3><p>打开 <a target="_blank" rel="noopener" href="https://www.dshdesktop.cn/">DSH Desktop 项目网站</a>，下载对应系统的版本并安装。</p>
+<h2 id="安装-DSH-Desktop"><a href="#安装-DSH-Desktop" class="headerlink" title="安装 DSH Desktop"></a>安装 DSH Desktop</h2><p>打开 <a target="_blank" rel="noopener" href="https://www.dshdesktop.cn/">DSH Desktop 项目网站</a>，下载对应系统的应用。截图中的下载页和安装引导使用的是 DSH Next 这个名称。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/1792488273740_image.png" alt="DSH Desktop 项目网站与下载入口"></p>
-<p>当前网站可能展示 DSH Desktop 或 DSH Next 等名称，按项目当时提供的版本说明选择即可。本文使用桌面客户端的图形界面流程，无需先搭建命令行环境。</p>
-<p>首次打开后，跟随应用内引导熟悉界面：</p>
+<p>安装后跟随应用里的引导完成设置。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%2816%29.png" alt="DSH Desktop 首次启动与引导界面"></p>
-<h3 id="2-登录-DeepSeek，留意账号赠金"><a href="#2-登录-DeepSeek，留意账号赠金" class="headerlink" title="2. 登录 DeepSeek，留意账号赠金"></a>2. 登录 DeepSeek，留意账号赠金</h3><p>如果引导里提供 <strong>登录 DeepSeek</strong>，可以按提示完成登录。如果你更习惯使用 API Key，也可以选择客户端提供的 Key 配置方式。</p>
+<p>到了下面这个页面，可以点击“登录 DeepSeek”。后续也可以选择使用自己的 API Key。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/1792488387340_image.png" alt="DSH 中的 DeepSeek 登录入口"></p>
-<p>本文截图左下角显示，账号领到了一笔 <strong>6 元新手赠金</strong>，并标出了到期时间。不过，金额、领取条件和活动时间可能调整；<strong>你自己账户页面显示到账多少、什么时候到期，才是准数。</strong></p>
+<p>我的账号登录后收到了 <strong>6 元赠金</strong>，左下角的通知写明了到期时间。这类赠金有使用期限，领到后记得看一下；是否能领取、具体金额和期限，以你账号显示的内容为准。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/1792488590767_image.png" alt="DSH 首页左下角的新手赠金到账提示及有效期"></p>
-<blockquote>
-<p>🎁 赠金要看有效期，别一激动领完，转头放到过期。它比较像试吃券，不太适合当传家宝。</p>
-</blockquote>
-<p>如果你的客户端没有登录领赠金入口，也不影响继续配置。可以使用自己的 DeepSeek API Key，或按下一节添加中转站。</p>
-<h3 id="3-先建一个练习工作区"><a href="#3-先建一个练习工作区" class="headerlink" title="3. 先建一个练习工作区"></a>3. 先建一个练习工作区</h3><p>准备一个空文件夹，例如 <code>DSH练习</code>，在客户端中新建或选择这个工作区，再发一个简单任务。</p>
-<p>如果输入框暂时不能输入，先看一下有没有选择工作区。新安装时，这一步很容易漏掉。</p>
+<p>只准备使用 DeepSeek 的话，完成登录并选好工作区，就可以开始使用了。如果没有赠金，也可以通过自己的 DeepSeek API Key 调用，相关费用记在 DeepSeek 官方账号下。</p>
 <p><a id="dsh-gpt"></a></p>
-<h2 id="六、让-DSH-接入-GPT：在模型设置里完成"><a href="#六、让-DSH-接入-GPT：在模型设置里完成" class="headerlink" title="六、让 DSH 接入 GPT：在模型设置里完成"></a>六、让 DSH 接入 GPT：在模型设置里完成</h2><p>这一部分直接在 DSH 里配置。前面创建的中转站 Key 可以按权限使用；想单独区分两个客户端的消耗，也可以给 DSH 再建一把 Key。</p>
-<h3 id="1-打开模型设置"><a href="#1-打开模型设置" class="headerlink" title="1. 打开模型设置"></a>1. 打开模型设置</h3><p>点击用户头像，进入 <strong>设置 → 模型</strong>。</p>
+<h2 id="DSH-接入-GPT"><a href="#DSH-接入-GPT" class="headerlink" title="DSH 接入 GPT"></a>DSH 接入 GPT</h2><p>DSH 可以直接添加中转站，不需要通过 CC Switch。</p>
+<p>点击用户头像，进入“设置”，再选择“模型”。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%2818%29.png" alt="DSH 设置中的模型页面"></p>
-<p>选择 <strong>添加模型提供商</strong>，再切换到 <strong>自定义模型 API</strong>。</p>
-<h3 id="2-填写提供商信息"><a href="#2-填写提供商信息" class="headerlink" title="2. 填写提供商信息"></a>2. 填写提供商信息</h3><p>按下面这张表填写：</p>
+<p>点击“添加模型提供商”，选择“自定义模型 API”。</p>
 <table>
 <thead>
 <tr>
-<th>字段</th>
-<th>填写内容</th>
-<th>怎么理解</th>
+<th>配置项</th>
+<th>内容</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Provider ID</td>
 <td>例如 <code>baiyb</code> 或 <code>baiyb-gpt</code></td>
-<td>提供商的内部标识，使用小写英文字母等允许的字符，创建后尽量保持稳定</td>
 </tr>
 <tr>
 <td>显示名称</td>
-<td>例如 <code>汇枢Flow-GPT</code></td>
-<td>显示在界面里的名字，自己认得就行</td>
+<td>例如 <code>汇枢Flow</code> 或 <code>GPT模型</code></td>
 </tr>
 <tr>
 <td>API 地址</td>
 <td><code>https://api.baiyb.top/v1</code></td>
-<td>本文 GPT Responses 路线使用的基础地址</td>
 </tr>
 <tr>
 <td>API 协议</td>
-<td><strong>OpenAI Responses</strong></td>
-<td>与本文所选线路匹配</td>
+<td><code>OpenAI Responses</code></td>
 </tr>
 <tr>
 <td>API 密钥</td>
-<td>自己从中转站复制的模型 Key</td>
-<td>不要照抄别人的截图内容</td>
+<td>从中转站复制的模型 Key</td>
 </tr>
 </tbody></table>
+<p>Provider ID 是内部标识，用小写英文填写，创建后尽量不要改动；显示名称可以按自己的习惯命名。前面给 Codex 创建的中转站 Key 也可以用在这里，想分别统计用量的话，再为 DSH 创建一把即可。</p>
 <p>API 地址可以直接复制：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.baiyb.top/v1</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%2817%29.png" alt="DSH 自定义模型 API：地址、协议及密钥配置"></p>
-<blockquote>
-<p><strong>这里先认真看两眼：</strong></p>
-<ul>
-<li>地址填到 <code>/v1</code>，不要自己再加上 <code>/responses</code>。</li>
-<li>协议选择 <strong>OpenAI Responses</strong>。名称里都带 OpenAI 的选项，也不能随便互换。</li>
-<li>这组地址和协议适用于本文所选线路。以后接入别的厂商，跟随对方的接入说明，不要一张表走天下。</li>
-</ul>
-</blockquote>
-<p>Provider ID 创建后会被会话和默认模型引用，先起个稳妥的名字；显示名称以后可以再改。<a target="_blank" rel="noopener" href="https://deepseek-harness.github.io/deepseek-harness/guide/providers">DSH 模型配置说明</a></p>
-<h3 id="3-获取模型，创建提供商"><a href="#3-获取模型，创建提供商" class="headerlink" title="3. 获取模型，创建提供商"></a>3. 获取模型，创建提供商</h3><p>点击 <strong>获取可用模型</strong>。正常返回后，会出现模型选择列表：</p>
+<p>地址填到 <code>/v1</code> 就可以了，后面不要再加 <code>/responses</code>。协议选择“OpenAI Responses”，和本文使用的线路保持一致。</p>
+<p>填好后点击“获取可用模型”，会弹出模型列表。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/1792489304347_image.png" alt="DSH 从中转站获取到的可用模型列表"></p>
-<p>找到并勾选 <code>gpt-6.1-sol</code>，点击右下角的 <strong>添加所选</strong>。截图中默认勾选了多个模型；如果确实都需要，可以保留全选状态再添加，只想先跑通就留下自己要用的那一个。</p>
-<p>确认模型已经加入表单后，再点击 <strong>创建提供商</strong>。<strong>查到模型、把模型加入表单、保存提供商，是连续的几个动作，别在最后一步提前下班。</strong></p>
+<p>勾选 <code>gpt-6.1-sol</code>，点击右下角的“添加所选”。截图里默认勾选了全部模型，想一起添加也可以保留全选。</p>
+<p>回到表单后，向下找到“创建提供商”并点击保存。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/1792489313630_image.png" alt="添加所选模型后，创建并保存模型提供商"></p>
-<p>获取到模型列表，说明模型发现这一步已经成功；具体能否正常生成回答，还需要发消息验证。</p>
-<p>如果列表为空或探测失败，先核对地址、Key 和分组。有些端点不支持自动发现，也可以按照站内说明手动添加准确的模型 ID。</p>
-<h3 id="4-回到聊天，选中刚添加的模型"><a href="#4-回到聊天，选中刚添加的模型" class="headerlink" title="4. 回到聊天，选中刚添加的模型"></a>4. 回到聊天，选中刚添加的模型</h3><p>点击输入框右下角的<strong>当前模型名称</strong>，再点击弹出菜单中的 <strong>模型</strong> 项：</p>
+<p>如果获取不到模型，先检查地址、Key 和分组。也可以按照站内提供的准确模型名称手动添加。</p>
+<p>保存后回到聊天页面，点击输入框右下角当前显示的模型名称，再点菜单中的“模型”。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/1792489389504_image.png" alt="DSH 聊天页中的模型切换入口"></p>
-<p>找到刚创建的提供商，选择 <strong><code>gpt-6.1-sol</code></strong>：</p>
+<p>找到刚添加的提供商，选择 <code>gpt-6.1-sol</code>。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/1792489391406_image.png" alt="在模型列表中选择 gpt-6.1-sol"></p>
-<p>为避免旧会话沿用原来的模型，第一次验证时建议新建一个聊天，再确认模型名称。</p>
+<p>选好后，输入框下方会显示模型名称。第一次配置建议新建一个聊天，避免旧会话继续使用原来的模型。</p>
 <p><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/1792489476495_image.png" alt="DSH 已选择 GPT 模型后的对话与工作界面"></p>
-<p>现在可以发一句简单的问题，随后去中转站使用日志里核对对应请求。回复正常、日志也能对上，这条链路才算完整跑通。</p>
-<h2 id="七、让它干点小活：第一次任务怎么说？"><a href="#七、让它干点小活：第一次任务怎么说？" class="headerlink" title="七、让它干点小活：第一次任务怎么说？"></a>七、让它干点小活：第一次任务怎么说？</h2><p>装好之后如果只问一句“你好”，多少有点像买了洗碗机，先让它洗一根筷子。当然可以，但还能试点更有意思的。</p>
-<p>先选一个<strong>练习文件夹</strong>，试试这样的任务：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">请在当前练习目录里创建一份 Markdown 待办清单，</span><br><span class="line">分成“今天完成”“本周安排”“以后再说”三部分。</span><br><span class="line">每部分写 3 条示例，只新建文件，不修改已有内容。</span><br></pre></td></tr></table></figure>
-
-<p>或者，给它一份自己的草稿：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">请阅读这份草稿，按“背景—问题—建议”整理结构。</span><br><span class="line">保留原有观点；遇到没有依据的数据请标出来，不要补造事实。</span><br><span class="line">先给我修改建议，我确认后再改文件。</span><br></pre></td></tr></table></figure>
-
-<p>把 <strong>目标、范围、输出格式</strong> 说清楚，通常比“帮我搞一下”更容易得到能用的结果。AI 还没学会读心术，至少先别拿它考这个。</p>
 <p><a id="troubleshooting"></a></p>
-<h2 id="八、卡住了？先查这几处"><a href="#八、卡住了？先查这几处" class="headerlink" title="八、卡住了？先查这几处"></a>八、卡住了？先查这几处</h2><p>不用一报错就卸载重装。很多时候，问题只是少点了一次保存，或者多写了一截地址。</p>
-<table>
-<thead>
-<tr>
-<th>现象</th>
-<th>优先检查</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Codex 切换后还在用旧模型</td>
-<td>CC Switch 是否真正启用了供应商；客户端是否已经完全退出并重开</td>
-</tr>
-<tr>
-<td>DSH 添加完提供商，却仍使用 DeepSeek</td>
-<td>是否在聊天模型选择器里切换；可以新建聊天再确认</td>
-</tr>
-<tr>
-<td><code>401</code> &#x2F; 密钥无效</td>
-<td>Key 是否复制完整、是否多了空格、是否已被停用或过期</td>
-</tr>
-<tr>
-<td><code>403</code> &#x2F; 没有权限</td>
-<td>令牌分组、模型权限、IP 限制，以及站点给出的具体错误信息</td>
-</tr>
-<tr>
-<td><code>404</code> &#x2F; 接口不存在</td>
-<td>API 地址是否错误、是否重复了 <code>/v1</code>、协议是否选对</td>
-</tr>
-<tr>
-<td>无可用渠道 &#x2F; 模型不存在</td>
-<td>模型 ID、令牌分组、站点当前是否提供该模型</td>
-</tr>
-<tr>
-<td>余额或额度不足</td>
-<td>当前供应商的账户余额与令牌额度；不要去另一个平台充值</td>
-</tr>
-<tr>
-<td>有模型列表，但发消息失败</td>
-<td>列表查询和模型调用是两步，继续检查协议、权限和错误详情</td>
-</tr>
-<tr>
-<td>DSH 输入框不可用</td>
-<td>是否选择了工作区和可用模型</td>
-</tr>
-<tr>
-<td>Windows 商店下载卡住</td>
-<td>商店状态、网络和代理；必要时尝试直连后重试</td>
-</tr>
-</tbody></table>
-<p>可以按这个顺序排查：<strong>Key → API 地址 → 模型 → 协议 → 是否保存 &#x2F; 启用 → 新聊天测试 → 使用日志</strong>。</p>
-<p>如果需要找我排查，带上<strong>出错时间、所选模型和脱敏后的错误截图</strong>会快很多。完整 API Key 就别发了，咱们查故障，不交换家门钥匙。</p>
-<hr>
-<h2 id="收工前，快速对一下"><a href="#收工前，快速对一下" class="headerlink" title="收工前，快速对一下"></a>收工前，快速对一下</h2><ul>
-<li><input disabled type="checkbox"> 我已经安装了准备使用的客户端。</li>
-<li><input disabled type="checkbox"> 我清楚目前使用的是中转站，还是 DeepSeek 官方 API。</li>
-<li><input disabled type="checkbox"> API 地址、Key、模型与协议是同一套配置。</li>
-<li><input disabled type="checkbox"> Codex 切换后已经重启；DSH 已选中正确的提供商和模型。</li>
-<li><input disabled type="checkbox"> 已发过一条测试消息，并核对对应平台的使用日志。</li>
-<li><input disabled type="checkbox"> Key 已保存好，分享截图时也没有把它一起晒出去。</li>
-</ul>
-<p>都打上勾，就可以拿自己的小任务试试了。先让它整理一份草稿、处理一个练习目录，熟悉之后再交更复杂的活。咱们的目标是让它帮忙干活，配置页面看看就好，不必在里面安家。</p>
-<details>
-<summary>📚 下载入口与配置文档，留着以后查</summary>
+<h2 id="测试与常见问题"><a href="#测试与常见问题" class="headerlink" title="测试与常见问题"></a>测试与常见问题</h2><p>配置完成后，先发一条简单消息，确认能正常回复。使用中转站的，再去“使用日志”查看刚才的请求，核对调用时间和模型；使用 DeepSeek 官方 API 的，就到官方平台查看用量。</p>
+<p>想继续测试文件处理，可以选一个空文件夹作为工作区，发这样一个任务：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">请在当前目录创建一份 README.md，</span><br><span class="line">写明这个文件夹用于测试 AI 的文件读写功能。</span><br></pre></td></tr></table></figure>
 
+<p>检查文件是否生成、内容是否正确即可。第一次测试用空目录，方便看清楚它具体做了什么。</p>
+<p>下面是配置时可能遇到的几种情况：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://chatgpt.com/">ChatGPT</a></li>
-<li><a target="_blank" rel="noopener" href="https://openai.com/zh-Hans-CN/codex/">Codex 官方介绍</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.chatgpt.com/docs/quickstart">OpenAI 桌面端快速开始</a></li>
-<li><a target="_blank" rel="noopener" href="https://learn.chatgpt.com/docs/auth">OpenAI 登录方式说明</a></li>
-<li><a target="_blank" rel="noopener" href="https://ccswitch.io/zh/">CC Switch 项目官网</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/farion1231/cc-switch/blob/main/docs/user-manual/zh/2-providers/2.1-add.md">CC Switch 添加供应商与协议说明</a></li>
-<li><a target="_blank" rel="noopener" href="https://platform.deepseek.com/">DeepSeek 官方开放平台</a></li>
-<li><a target="_blank" rel="noopener" href="https://api-docs.deepseek.com/zh-cn/">DeepSeek API 文档</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.dshdesktop.cn/">DSH Desktop 项目网站</a></li>
-<li><a target="_blank" rel="noopener" href="https://deepseek-harness.github.io/deepseek-harness/guide/providers">DSH 模型配置文档</a></li>
-<li><a target="_blank" rel="noopener" href="https://api.baiyb.top/">汇枢Flow</a></li>
+<li><strong>Codex 还是原来的模型</strong>：确认 CC Switch 卡片显示“使用中”，然后完全退出并重开客户端。只关闭窗口，程序可能还在后台运行。</li>
+<li><strong>DSH 还在使用 DeepSeek</strong>：添加提供商后，需要在聊天页面手动选择新模型。新建聊天后再检查一次。</li>
+<li><strong>提示 Key 无效或返回 <code>401</code></strong>：检查密钥有没有复制完整、是否带了空格，以及是否过期或被停用。</li>
+<li><strong>提示没有权限、无可用渠道或找不到模型</strong>：检查令牌分组和模型名称，再看站内是否开放了对应模型。</li>
+<li><strong>返回 <code>404</code></strong>：检查 API 地址和协议，尤其留意是否重复填写了 <code>/v1</code>，或把完整请求路径填进了基础地址。</li>
+<li><strong>能获取模型列表，但发消息失败</strong>：列表查询成功不代表模型调用一定成功，需要结合具体报错继续检查权限、余额和协议。</li>
+<li><strong>DSH 输入框不能使用</strong>：检查有没有选中工作区和可用模型。</li>
 </ul>
-</details>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://baiyb.top">BaiYB</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://baiyb.top/2026/10/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/">https://baiyb.top/2026/10/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://baiyb.top" target="_blank">BaiYB的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Codex/">Codex</a><a class="post-meta__tags" href="/tags/DSH/">DSH</a><a class="post-meta__tags" href="/tags/DeepSeek/">DeepSeek</a><a class="post-meta__tags" href="/tags/AI%E5%B7%A5%E5%85%B7/">AI工具</a></div><div class="post-share"><div class="social-share" data-image="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%282%29.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/09/23/C%E8%AF%AD%E8%A8%80%E9%80%9A%E8%AF%86/" title="C语言通识"><img class="cover" src="https://previewengine.zohopublic.com.cn/image/WD/kpgnrc1bbd95d3c72430bba7d1b061e35be04" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">C语言通识</div></div><div class="info-2"><div class="info-item-1">对C语言以及C++的系统性梳理</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://img.baiyb.top/file/blog/1771123844150_微信图片_2026-02-15_103638_552.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">BaiYB</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Bai-YB"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Bai-YB" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎访问我的个人网站，我会在这里分享我所学到的知识和经验，希望能够帮助到你。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%88%E8%AE%A4%E4%BA%BA%EF%BC%9ACodex%E3%80%81DSH%E3%80%81CC-Switch-%E5%88%86%E5%88%AB%E5%B9%B2%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">先认人：Codex、DSH、CC Switch 分别干什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%B3%A8%E5%86%8C-ChatGPT%EF%BC%9A%E5%85%88%E6%8A%8A%E8%B4%A6%E5%8F%B7%E5%87%86%E5%A4%87%E5%A5%BD"><span class="toc-number">2.</span> <span class="toc-text">一、注册 ChatGPT：先把账号准备好</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%89%93%E5%BC%80%E5%AE%98%E7%BD%91%EF%BC%8C%E7%82%B9%E5%87%BB%E5%85%8D%E8%B4%B9%E6%B3%A8%E5%86%8C"><span class="toc-number">2.1.</span> <span class="toc-text">1. 打开官网，点击免费注册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8C%89%E6%8F%90%E7%A4%BA%E5%AE%8C%E6%88%90%E9%AA%8C%E8%AF%81"><span class="toc-number">2.2.</span> <span class="toc-text">2. 按提示完成验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%8B%E8%BD%BD-Codex%EF%BC%9AMac-%E5%92%8C-Windows-%E5%88%86%E5%BC%80%E7%9C%8B"><span class="toc-number">3.</span> <span class="toc-text">二、下载 Codex：Mac 和 Windows 分开看</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mac-%E7%94%A8%E6%88%B7"><span class="toc-number">3.1.</span> <span class="toc-text">Mac 用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-%E7%94%A8%E6%88%B7"><span class="toc-number">3.2.</span> <span class="toc-text">Windows 用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%89%93%E5%BC%80%EF%BC%8C%E5%85%88%E8%AE%A4%E8%AF%86%E4%B8%A4%E4%B8%AA%E7%99%BB%E5%BD%95%E5%85%A5%E5%8F%A3"><span class="toc-number">3.3.</span> <span class="toc-text">第一次打开，先认识两个登录入口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%87%86%E5%A4%87%E6%A8%A1%E5%9E%8B%E6%9D%A5%E6%BA%90%EF%BC%9A%E4%B8%AD%E8%BD%AC%E7%AB%99%E5%92%8C%E5%AE%98%E6%96%B9-API-%E9%83%BD%E5%8F%AF%E4%BB%A5"><span class="toc-number">4.</span> <span class="toc-text">三、准备模型来源：中转站和官方 API 都可以</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%B3%A8%E5%86%8C%E4%B8%AD%E8%BD%AC%E7%AB%99%E8%B4%A6%E5%8F%B7"><span class="toc-number">4.1.</span> <span class="toc-text">1. 注册中转站账号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84-API-Key"><span class="toc-number">4.2.</span> <span class="toc-text">2. 创建自己的 API Key</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%89%E8%A3%85-CC-Switch%EF%BC%8C%E8%AE%A9-Codex-%E6%8D%A2%E6%A8%A1%E5%9E%8B%E6%9B%B4%E6%96%B9%E4%BE%BF"><span class="toc-number">5.</span> <span class="toc-text">四、安装 CC Switch，让 Codex 换模型更方便</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%AE%89%E8%A3%85"><span class="toc-number">5.1.</span> <span class="toc-text">1. 下载并安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%AE%A4%E5%87%86-Codex%EF%BC%8C%E6%B7%BB%E5%8A%A0%E4%BE%9B%E5%BA%94%E5%95%86"><span class="toc-number">5.2.</span> <span class="toc-text">2. 认准 Codex，添加供应商</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%BA%BF-A%EF%BC%9A%E7%BB%99-Codex-%E6%8E%A5%E5%85%A5-DeepSeek-%E5%AE%98%E6%96%B9-API"><span class="toc-number">5.3.</span> <span class="toc-text">路线 A：给 Codex 接入 DeepSeek 官方 API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E9%80%89%E6%8B%A9-DeepSeek-%E9%A2%84%E8%AE%BE"><span class="toc-number">5.3.1.</span> <span class="toc-text">第一步：选择 DeepSeek 预设</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E5%9C%A8%E5%AE%98%E6%96%B9%E5%B9%B3%E5%8F%B0%E5%88%9B%E5%BB%BA-Key"><span class="toc-number">5.3.2.</span> <span class="toc-text">第二步：在官方平台创建 Key</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E5%9B%9E%E5%88%B0-CC-Switch-%E4%BF%9D%E5%AD%98"><span class="toc-number">5.3.3.</span> <span class="toc-text">第三步：回到 CC Switch 保存</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%BA%BF-B%EF%BC%9A%E9%80%9A%E8%BF%87%E4%B8%AD%E8%BD%AC%E7%AB%99%E7%BB%99-Codex-%E6%8E%A5%E5%85%A5-GPT"><span class="toc-number">5.4.</span> <span class="toc-text">路线 B：通过中转站给 Codex 接入 GPT</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%9C%A8%E5%AF%86%E9%92%A5%E8%8F%9C%E5%8D%95%E4%B8%AD%E9%80%89%E6%8B%A9-CC-Switch"><span class="toc-number">5.4.1.</span> <span class="toc-text">第一步：在密钥菜单中选择 CC Switch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E9%80%89%E6%8B%A9-Codex-%E5%92%8C%E4%B8%BB%E6%A8%A1%E5%9E%8B"><span class="toc-number">5.4.2.</span> <span class="toc-text">第二步：选择 Codex 和主模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E5%90%AF%E7%94%A8%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%AE%8C%E5%85%A8%E9%80%80%E5%87%BA%E5%86%8D%E9%87%8D%E5%BC%80"><span class="toc-number">5.4.3.</span> <span class="toc-text">第三步：启用配置，完全退出再重开</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9B%9E%E5%88%B0-Codex%EF%BC%8C%E5%AE%8C%E6%88%90%E7%99%BB%E5%BD%95%E5%B9%B6%E6%B5%8B%E8%AF%95"><span class="toc-number">5.5.</span> <span class="toc-text">3. 回到 Codex，完成登录并测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%AE%89%E8%A3%85-DSH-Desktop%EF%BC%9A%E5%85%88%E7%94%A8-DeepSeek-%E8%B7%91%E8%B5%B7%E6%9D%A5"><span class="toc-number">6.</span> <span class="toc-text">五、安装 DSH Desktop：先用 DeepSeek 跑起来</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%AE%8C%E6%88%90%E9%A6%96%E6%AC%A1%E5%BC%95%E5%AF%BC"><span class="toc-number">6.1.</span> <span class="toc-text">1. 下载并完成首次引导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%99%BB%E5%BD%95-DeepSeek%EF%BC%8C%E7%95%99%E6%84%8F%E8%B4%A6%E5%8F%B7%E8%B5%A0%E9%87%91"><span class="toc-number">6.2.</span> <span class="toc-text">2. 登录 DeepSeek，留意账号赠金</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%85%88%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BB%83%E4%B9%A0%E5%B7%A5%E4%BD%9C%E5%8C%BA"><span class="toc-number">6.3.</span> <span class="toc-text">3. 先建一个练习工作区</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E8%AE%A9-DSH-%E6%8E%A5%E5%85%A5-GPT%EF%BC%9A%E5%9C%A8%E6%A8%A1%E5%9E%8B%E8%AE%BE%E7%BD%AE%E9%87%8C%E5%AE%8C%E6%88%90"><span class="toc-number">7.</span> <span class="toc-text">六、让 DSH 接入 GPT：在模型设置里完成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%89%93%E5%BC%80%E6%A8%A1%E5%9E%8B%E8%AE%BE%E7%BD%AE"><span class="toc-number">7.1.</span> <span class="toc-text">1. 打开模型设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%A1%AB%E5%86%99%E6%8F%90%E4%BE%9B%E5%95%86%E4%BF%A1%E6%81%AF"><span class="toc-number">7.2.</span> <span class="toc-text">2. 填写提供商信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%8E%B7%E5%8F%96%E6%A8%A1%E5%9E%8B%EF%BC%8C%E5%88%9B%E5%BB%BA%E6%8F%90%E4%BE%9B%E5%95%86"><span class="toc-number">7.3.</span> <span class="toc-text">3. 获取模型，创建提供商</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%9B%9E%E5%88%B0%E8%81%8A%E5%A4%A9%EF%BC%8C%E9%80%89%E4%B8%AD%E5%88%9A%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="toc-number">7.4.</span> <span class="toc-text">4. 回到聊天，选中刚添加的模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E8%AE%A9%E5%AE%83%E5%B9%B2%E7%82%B9%E5%B0%8F%E6%B4%BB%EF%BC%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BB%BB%E5%8A%A1%E6%80%8E%E4%B9%88%E8%AF%B4%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">七、让它干点小活：第一次任务怎么说？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E5%8D%A1%E4%BD%8F%E4%BA%86%EF%BC%9F%E5%85%88%E6%9F%A5%E8%BF%99%E5%87%A0%E5%A4%84"><span class="toc-number">9.</span> <span class="toc-text">八、卡住了？先查这几处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B6%E5%B7%A5%E5%89%8D%EF%BC%8C%E5%BF%AB%E9%80%9F%E5%AF%B9%E4%B8%80%E4%B8%8B"><span class="toc-number">10.</span> <span class="toc-text">收工前，快速对一下</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/10/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/" title="如何使用 Codex 与 DSH：从安装到接入 GPT、DeepSeek"><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%282%29.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何使用 Codex 与 DSH：从安装到接入 GPT、DeepSeek"/></a><div class="content"><a class="title" href="/2026/10/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/" title="如何使用 Codex 与 DSH：从安装到接入 GPT、DeepSeek">如何使用 Codex 与 DSH：从安装到接入 GPT、DeepSeek</a><time datetime="2026-10-20T08:00:00.000Z" title="发表于 2026-10-20 16:00:00">2026-10-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/09/23/C%E8%AF%AD%E8%A8%80%E9%80%9A%E8%AF%86/" title="C语言通识"><img src="https://previewengine.zohopublic.com.cn/image/WD/kpgnrc1bbd95d3c72430bba7d1b061e35be04" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言通识"/></a><div class="content"><a class="title" href="/2026/09/23/C%E8%AF%AD%E8%A8%80%E9%80%9A%E8%AF%86/" title="C语言通识">C语言通识</a><time datetime="2026-09-23T01:44:00.000Z" title="发表于 2026-09-23 09:44:00">2026-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/27/Hexo%20Lite%20Editor%20%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/" title="Hexo Lite Editor 开发日记"><img src="https://img.baiyb.top/file/blog/%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo Lite Editor 开发日记"/></a><div class="content"><a class="title" href="/2026/06/27/Hexo%20Lite%20Editor%20%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/" title="Hexo Lite Editor 开发日记">Hexo Lite Editor 开发日记</a><time datetime="2026-06-27T14:10:27.000Z" title="发表于 2026-06-27 22:10:27">2026-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/02/15/%E4%B8%80%E9%94%AE%E8%8E%B7%E5%8F%96bxk%E6%96%B0%E6%95%99%E5%8A%A1%E8%AF%BE%E8%A1%A8/" title="一键获取可以导入WakeUP的bxk课程表"><img src="https://eo-img.544521.xyz/i/pc/img483.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一键获取可以导入WakeUP的bxk课程表"/></a><div class="content"><a class="title" href="/2026/02/15/%E4%B8%80%E9%94%AE%E8%8E%B7%E5%8F%96bxk%E6%96%B0%E6%95%99%E5%8A%A1%E8%AF%BE%E8%A1%A8/" title="一键获取可以导入WakeUP的bxk课程表">一键获取可以导入WakeUP的bxk课程表</a><time datetime="2026-02-15T04:05:35.000Z" title="发表于 2026-02-15 12:05:35">2026-02-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/27/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="基于Hexo框架搭建个人博客"><img src="https://i1.mcobj.com/uploads/20220112_71ce4921653f8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于Hexo框架搭建个人博客"/></a><div class="content"><a class="title" href="/2025/06/27/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="基于Hexo框架搭建个人博客">基于Hexo框架搭建个人博客</a><time datetime="2025-06-27T14:39:04.000Z" title="发表于 2025-06-27 22:39:04">2025-06-27</time></div></div></div></div></div></div></main><footer id="footer"><!-- —— 页脚暗色样式覆盖 ——--><style>#footer {
+<p>如果需要找我帮忙排查，把出错时间、模型名称和错误截图一起发来，记得遮住完整的 API Key。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://baiyb.top">BaiYB</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://baiyb.top/2026/10/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/">https://baiyb.top/2026/10/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://baiyb.top" target="_blank">BaiYB的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Codex/">Codex</a><a class="post-meta__tags" href="/tags/DSH/">DSH</a><a class="post-meta__tags" href="/tags/DeepSeek/">DeepSeek</a><a class="post-meta__tags" href="/tags/AI%E5%B7%A5%E5%85%B7/">AI工具</a></div><div class="post-share"><div class="social-share" data-image="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%282%29.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/09/23/C%E8%AF%AD%E8%A8%80%E9%80%9A%E8%AF%86/" title="C语言通识"><img class="cover" src="https://previewengine.zohopublic.com.cn/image/WD/kpgnrc1bbd95d3c72430bba7d1b061e35be04" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">C语言通识</div></div><div class="info-2"><div class="info-item-1">对C语言以及C++的系统性梳理</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://img.baiyb.top/file/blog/1771123844150_微信图片_2026-02-15_103638_552.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">BaiYB</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Bai-YB"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Bai-YB" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎访问我的个人网站，我会在这里分享我所学到的知识和经验，希望能够帮助到你。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C-ChatGPT"><span class="toc-number">1.</span> <span class="toc-text">注册 ChatGPT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Codex"><span class="toc-number">2.</span> <span class="toc-text">安装 Codex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E4%B8%AD%E8%BD%AC%E7%AB%99-API-Key"><span class="toc-number">3.</span> <span class="toc-text">获取中转站 API Key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8-CC-Switch-%E9%85%8D%E7%BD%AE-Codex"><span class="toc-number">4.</span> <span class="toc-text">用 CC Switch 配置 Codex</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5-DeepSeek"><span class="toc-number">4.1.</span> <span class="toc-text">接入 DeepSeek</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5-GPT"><span class="toc-number">4.2.</span> <span class="toc-text">接入 GPT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-DSH-Desktop"><span class="toc-number">5.</span> <span class="toc-text">安装 DSH Desktop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DSH-%E6%8E%A5%E5%85%A5-GPT"><span class="toc-number">6.</span> <span class="toc-text">DSH 接入 GPT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">测试与常见问题</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/10/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/" title="Codex 和 DSH 的安装与模型配置"><img src="https://img.baiyb.top/file/blog/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/image%282%29.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Codex 和 DSH 的安装与模型配置"/></a><div class="content"><a class="title" href="/2026/10/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Codex%E4%B8%8EDSH/" title="Codex 和 DSH 的安装与模型配置">Codex 和 DSH 的安装与模型配置</a><time datetime="2026-10-20T08:00:00.000Z" title="发表于 2026-10-20 16:00:00">2026-10-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/09/23/C%E8%AF%AD%E8%A8%80%E9%80%9A%E8%AF%86/" title="C语言通识"><img src="https://previewengine.zohopublic.com.cn/image/WD/kpgnrc1bbd95d3c72430bba7d1b061e35be04" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言通识"/></a><div class="content"><a class="title" href="/2026/09/23/C%E8%AF%AD%E8%A8%80%E9%80%9A%E8%AF%86/" title="C语言通识">C语言通识</a><time datetime="2026-09-23T01:44:00.000Z" title="发表于 2026-09-23 09:44:00">2026-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/27/Hexo%20Lite%20Editor%20%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/" title="Hexo Lite Editor 开发日记"><img src="https://img.baiyb.top/file/blog/%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo Lite Editor 开发日记"/></a><div class="content"><a class="title" href="/2026/06/27/Hexo%20Lite%20Editor%20%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/" title="Hexo Lite Editor 开发日记">Hexo Lite Editor 开发日记</a><time datetime="2026-06-27T14:10:27.000Z" title="发表于 2026-06-27 22:10:27">2026-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/02/15/%E4%B8%80%E9%94%AE%E8%8E%B7%E5%8F%96bxk%E6%96%B0%E6%95%99%E5%8A%A1%E8%AF%BE%E8%A1%A8/" title="一键获取可以导入WakeUP的bxk课程表"><img src="https://eo-img.544521.xyz/i/pc/img483.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一键获取可以导入WakeUP的bxk课程表"/></a><div class="content"><a class="title" href="/2026/02/15/%E4%B8%80%E9%94%AE%E8%8E%B7%E5%8F%96bxk%E6%96%B0%E6%95%99%E5%8A%A1%E8%AF%BE%E8%A1%A8/" title="一键获取可以导入WakeUP的bxk课程表">一键获取可以导入WakeUP的bxk课程表</a><time datetime="2026-02-15T04:05:35.000Z" title="发表于 2026-02-15 12:05:35">2026-02-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/27/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="基于Hexo框架搭建个人博客"><img src="https://i1.mcobj.com/uploads/20220112_71ce4921653f8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于Hexo框架搭建个人博客"/></a><div class="content"><a class="title" href="/2025/06/27/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="基于Hexo框架搭建个人博客">基于Hexo框架搭建个人博客</a><time datetime="2025-06-27T14:39:04.000Z" title="发表于 2025-06-27 22:39:04">2025-06-27</time></div></div></div></div></div></div></main><footer id="footer"><!-- —— 页脚暗色样式覆盖 ——--><style>#footer {
   background-color: #000 !important;
   color: #ccc !important;
 }
